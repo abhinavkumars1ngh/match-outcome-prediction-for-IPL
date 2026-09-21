@@ -274,8 +274,11 @@ Chennai Super Kings Wins  : 17 (45.95%)
 
 ---
 
-## Author & Academic Integrity Statement
+## Project Team & Academic Integrity Statement
 
-- **Author:** Abhinav Kumar Singh
+- **Project Team / Authors:**
+  1. **Abhinav Kumar Singh** — `24BDS1124`
+  2. **Mukul Goel** — `24BDS1084`
+  3. **Inesh Mathur** — `24BDS1183`
 - **Course:** Programming for Data Science
-- **All figures, probabilities, metrics, and tables are computed directly from the provided empirical IPL dataset without fabrication.**
+- **Academic Integrity:** All figures, probabilities, metrics, and tables are computed directly from the provided empirical IPL dataset without fabrication.

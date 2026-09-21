@@ -8,6 +8,11 @@
 **A Comparative Study of Machine Learning and Deep Learning Models for Explainable IPL Match Outcome Prediction**
 
 ### Subtitle / Presenter Info:
+- **Project Team / Presenters**:
+  1. Abhinav Kumar Singh — 24BDS1124
+  2. Mukul Goel — 24BDS1084
+  3. Inesh Mathur — 24BDS1183
+- **Course**: Programming for Data Science
 - **Domain**: Sports Analytics & Machine Learning Pipeline Engineering
 - **Tech Stack**: R (`DBI`, `RSQLite`, `caret`, `randomForest`, `gbm`, `nnet`, `ggplot2`), SQLite
 - **Objective**: Formulate a leak-free, pre-match predictive framework to classify match winners across 17 IPL seasons (2008–2024) using strictly historical contextual features.

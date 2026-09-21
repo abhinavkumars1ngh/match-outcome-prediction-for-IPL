@@ -60,8 +60,8 @@ def build_presentation():
         # Footer
         tb_foot = slide.shapes.add_textbox(Inches(0.8), Inches(7.05), Inches(10), Inches(0.3))
         p_foot = tb_foot.text_frame.paragraphs[0]
-        p_foot.text = "A Comparative Study of ML Models for Explainable IPL Match Outcome Prediction | Programming for Data Science"
-        p_foot.font.size = Pt(9)
+        p_foot.text = "IPL Match Outcome Prediction | Abhinav Kumar Singh (24BDS1124) • Mukul Goel (24BDS1084) • Inesh Mathur (24BDS1183)"
+        p_foot.font.size = Pt(8.5)
         p_foot.font.color.rgb = C_TEXT_MUTED
 
         # Slide Number
@@ -88,34 +88,44 @@ def build_presentation():
     bg1.line.fill.background()
 
     # Domain Tag
-    tb_tag = s1.shapes.add_textbox(Inches(1.0), Inches(1.2), Inches(11.3), Inches(0.4))
+    tb_tag = s1.shapes.add_textbox(Inches(1.0), Inches(0.8), Inches(11.3), Inches(0.35))
     p = tb_tag.text_frame.paragraphs[0]
-    p.text = "SPORTS ANALYTICS & MACHINE LEARNING PIPELINE ENGINEERING"
-    p.font.size = Pt(12)
+    p.text = "PROGRAMMING FOR DATA SCIENCE | PROJECT PRESENTATION"
+    p.font.size = Pt(11)
     p.font.bold = True
     p.font.color.rgb = C_ACCENT_AMBER
 
     # Main Title
-    tb_title = s1.shapes.add_textbox(Inches(1.0), Inches(1.6), Inches(11.3), Inches(1.8))
+    tb_title = s1.shapes.add_textbox(Inches(1.0), Inches(1.15), Inches(11.3), Inches(1.6))
     tf = tb_title.text_frame
     tf.word_wrap = True
     p = tf.paragraphs[0]
     p.text = "A Comparative Study of Machine Learning and Deep Learning Models for Explainable IPL Match Outcome Prediction"
-    p.font.size = Pt(32)
+    p.font.size = Pt(28)
     p.font.bold = True
     p.font.color.rgb = C_WHITE
 
-    # Subtitle / Objective
-    tb_sub = s1.shapes.add_textbox(Inches(1.0), Inches(3.6), Inches(11.3), Inches(1.0))
-    tf = tb_sub.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.text = "A zero-leakage, pre-match predictive framework to classify match winners across 17 IPL seasons (2008–2024) integrating SQLite database architecture, 12 benchmarked classification models, automated hyperparameter tuning, and explainable AI."
-    p.font.size = Pt(15)
-    p.font.color.rgb = RGBColor(203, 213, 225)
+    # Presenters Card
+    tb_pres = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.0), Inches(2.9), Inches(11.3), Inches(1.1))
+    tb_pres.fill.solid()
+    tb_pres.fill.fore_color.rgb = RGBColor(26, 37, 64)
+    tb_pres.line.color.rgb = RGBColor(51, 65, 85)
+    tf_p = tb_pres.text_frame
+    tf_p.word_wrap = True
+    p_hdr = tf_p.paragraphs[0]
+    p_hdr.text = "PROJECT TEAM / PRESENTERS:"
+    p_hdr.font.size = Pt(10)
+    p_hdr.font.bold = True
+    p_hdr.font.color.rgb = C_ACCENT_AMBER
+
+    p_names = tf_p.add_paragraph()
+    p_names.text = "• Abhinav Kumar Singh (24BDS1124)      • Mukul Goel (24BDS1084)      • Inesh Mathur (24BDS1183)"
+    p_names.font.size = Pt(13)
+    p_names.font.bold = True
+    p_names.font.color.rgb = C_WHITE
 
     # Info Cards
-    card1 = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.0), Inches(4.9), Inches(3.5), Inches(1.6))
+    card1 = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.0), Inches(4.2), Inches(3.5), Inches(2.3))
     card1.fill.solid()
     card1.fill.fore_color.rgb = RGBColor(30, 41, 59)
     card1.line.color.rgb = RGBColor(51, 65, 85)
@@ -127,27 +137,27 @@ def build_presentation():
     p.font.bold = True
     p.font.color.rgb = C_ACCENT_AMBER
     p2 = tf1.add_paragraph()
-    p2.text = "• Language: R (v4.6.1)\n• Database: SQLite via DBI & RSQLite\n• Modeling: randomForest, gbm, nnet, e1071, ranger, ipred, glmnet\n• Graphics: ggplot2 & corrplot"
-    p2.font.size = Pt(10)
+    p2.text = "• Language: R (v4.6.1)\n• Database: SQLite (DBI & RSQLite)\n• Modeling: randomForest, gbm, nnet, e1071, ranger, ipred, glmnet\n• Graphics: ggplot2 & corrplot"
+    p2.font.size = Pt(9.5)
     p2.font.color.rgb = RGBColor(226, 232, 240)
 
-    card2 = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(4.9), Inches(4.9), Inches(3.5), Inches(1.6))
+    card2 = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(4.9), Inches(4.2), Inches(3.5), Inches(2.3))
     card2.fill.solid()
     card2.fill.fore_color.rgb = RGBColor(30, 41, 59)
     card2.line.color.rgb = RGBColor(51, 65, 85)
     tf2 = card2.text_frame
     tf2.word_wrap = True
     p = tf2.paragraphs[0]
-    p.text = "PROJECT SCOPE\n"
+    p.text = "PROJECT SCALE\n"
     p.font.size = Pt(11)
     p.font.bold = True
     p.font.color.rgb = C_PRIMARY_BLUE
     p2 = tf2.add_paragraph()
-    p2.text = "• 17 Seasons analyzed (2008–2024)\n• 1,095 fixtures & 260,000+ ball deliveries\n• 12 Machine & Deep Learning Algorithms\n• 10/10 Evaluation Marks Addressed"
-    p2.font.size = Pt(10)
+    p2.text = "• 17 Seasons analyzed (2008–2024)\n• 1,095 fixtures & 260k+ ball events\n• 12 Machine & Deep Learning Models\n• 10/10 Evaluation Marks Addressed"
+    p2.font.size = Pt(9.5)
     p2.font.color.rgb = RGBColor(226, 232, 240)
 
-    card3 = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(8.8), Inches(4.9), Inches(3.5), Inches(1.6))
+    card3 = s1.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(8.8), Inches(4.2), Inches(3.5), Inches(2.3))
     card3.fill.solid()
     card3.fill.fore_color.rgb = RGBColor(30, 41, 59)
     card3.line.color.rgb = RGBColor(51, 65, 85)
@@ -159,9 +169,16 @@ def build_presentation():
     p.font.bold = True
     p.font.color.rgb = C_ACCENT_GREEN
     p2 = tf3.add_paragraph()
-    p2.text = "• Automated Pipeline: Rscript run_pipeline.R\n• Interactive CLI: Rscript interactive_query.R\n• GitHub: abhinavkumars1ngh/match-outcome-prediction-for-IPL"
-    p2.font.size = Pt(10)
+    p2.text = "• Automated Pipeline: run_pipeline.R\n• Interactive CLI: interactive_query.R\n• Strict Zero Target Leakage\n• GitHub: match-outcome-prediction-for-IPL"
+    p2.font.size = Pt(9.5)
     p2.font.color.rgb = RGBColor(226, 232, 240)
+
+    # Slide 1 Footer
+    tb_s1_foot = s1.shapes.add_textbox(Inches(1.0), Inches(6.85), Inches(11.3), Inches(0.4))
+    p_s1_f = tb_s1_foot.text_frame.paragraphs[0]
+    p_s1_f.text = "Team: Abhinav Kumar Singh (24BDS1124) | Mukul Goel (24BDS1084) | Inesh Mathur (24BDS1183)"
+    p_s1_f.font.size = Pt(10)
+    p_s1_f.font.color.rgb = RGBColor(148, 163, 184)
 
     add_notes(s1, "Welcome everyone. In this presentation, we demonstrate an end-to-end data engineering and predictive modeling system for Indian Premier League match outcome prediction. We strictly adhere to pre-match constraints without lookahead bias and benchmark 12 machine learning algorithms with automated hyperparameter optimization.")
 
