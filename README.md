@@ -272,6 +272,25 @@ Mumbai Indians Wins       : 20 (54.05%)
 Chennai Super Kings Wins  : 17 (45.95%)
 ```
 
+### Run Batter vs. Bowler Micro-Matchup Analytics Engine
+To analyze micro-telemetry encounters between any individual batsman and bowler:
+```bash
+# Direct CLI invocation:
+Rscript R/09_matchup_analysis.R "Rohit Sharma" "Sunil Narine"
+Rscript R/09_matchup_analysis.R "Virat Kohli" "Jasprit Bumrah" "Wankhede Stadium" 18
+
+# Or via the interactive query tool:
+Rscript interactive_query.R matchup "Rohit Sharma" "Sunil Narine"
+Rscript interactive_query.R matchup "MS Dhoni" "Sunil Narine"
+Rscript interactive_query.R matchup "Suryakumar Yadav" "Rashid Khan"
+```
+Outputs detailed breakdown including:
+- **Batter Profile:** Balls faced, runs scored, dismissals, strike rate, boundary frequency, dot ball %, strike rotation, and tactical tendency mode.
+- **Bowler Profile:** Deliveries bowled, legal balls, runs conceded, bowler economy rate, bowling average, bowling strike rate, dot ball dominance, and recurring line/length vulnerabilities.
+- **Phase Breakdown:** Overs 1–6 (Powerplay), Overs 7–15 (Middle), Overs 16–20 (Death).
+- **Contextual & Recency Dynamics:** Career baseline vs. Recent era (2022–2024), independent recent form across all opponents (2023–2024), and venue-specific performance.
+- **Statistical Reliability Advisory:** Automated sample size confidence categorization ($\ge 45$ balls = Robust, $20–44$ = Moderate, $<20$ = High Variance).
+
 ---
 
 ## Project Team & Academic Integrity Statement

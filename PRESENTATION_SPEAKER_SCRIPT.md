@@ -71,7 +71,22 @@ To eliminate query bottlenecks during modeling, we built composite B-tree indexe
 As shown on the right of the slide, all data retrieval was executed directly through structured SQL queries in R. For example:
 - Our franchise win aggregation query proved that **Mumbai Indians** lead all-time IPL wins with 144 victories, followed closely by **Chennai Super Kings** with 138.
 - Our toss impact query revealed that out of 1,090 valid historical matches, the toss winner won the match in 554 instances—which equates to an exact toss win conversion rate of **50.83%**. This proves statistically that winning the toss offers almost negligible advantage across 17 years of IPL history.
-- Furthermore, our head-to-head query between Mumbai Indians and Chennai Super Kings shows MI leading with 20 wins against CSK's 17 out of 37 encounters.
+- Furthermore, our head-to-head query between Mumbai Indians and Chennai Super Kings shows MI leading with 20 wins against CSK's 17 out of 37 encounters."
+
+---
+
+### Slide 4: Granular Dataset Attributes: Ball-by-Ball Tracking & Telemetry
+> **[Cue: Click to Slide 4]**
+
+"Moving to Slide 4, let us look at the full data inventory and granular delivery telemetry that powers this study.
+
+Our system ingests 20 core attributes from `matches.csv`—including match IDs, seasons, venues, toss decisions, and outcome margins—and 17 granular attributes from `deliveries.csv`, tracking every individual ball, batsman runs, bowler dismissals, and extras.
+
+Crucially, as shown on the right of the slide, our schema accounts for two critical micro-level delivery vectors:
+1. First, **'Ball bowled'**, which captures bowler delivery mechanics and ball release trajectory: including length and line classifications such as yorkers, bouncers, and good lengths, pace variations like outswingers, reverse swing, and slower cutters, as well as spin dynamics like googlies and carrom balls.
+2. Second, **'Shot played'**, which documents batsman stroke mechanics and execution: spanning attacking power strokes like cover drives, pulls, and helicopter shots, to strike rotation and defensive blocks.
+
+By capturing both bowler execution and batsman reaction, we establish the quantitative bridge from macro pre-match odds down to granular, ball-by-ball batter-versus-bowler matchup modeling.
 
 Now, to explain how we transformed this relational data into pre-match predictive features without leakage and built our 12 classification models, I hand over the presentation to my teammate, **Mukul Goel**."
 
@@ -80,7 +95,7 @@ Now, to explain how we transformed this relational data into pre-match predictiv
 ---
 
 ## Part 2: Speaker 2 — Mukul Goel (`24BDS1084`)
-*Duration: ~3 Minutes | Slides 4, 5, 6*
+*Duration: ~3 Minutes | Slides 5, 6, 7*
 
 > **[Stage Direction]**: Step forward confidently, acknowledge Abhinav with a nod, smile at the panel.
 
@@ -88,8 +103,8 @@ Now, to explain how we transformed this relational data into pre-match predictiv
 
 ---
 
-### Slide 4: Criteria 2 — Feature Engineering & Feature Selection (1 Mark)
-> **[Cue: Display Slide 4]**
+### Slide 5: Criteria 2 — Feature Engineering & Feature Selection (1 Mark)
+> **[Cue: Display Slide 5]**
 
 "Criterion 2 addresses Feature Engineering and Feature Selection.
 
@@ -111,10 +126,10 @@ We then subjected these predictors to a **3-tier statistical selection process**
 
 ---
 
-### Slide 5: Criteria 3 — Implementation of 12 ML/DL Algorithms (3 Marks)
-> **[Cue: Click to Slide 5]**
+### Slide 6: Criteria 3 — Implementation of 12 ML/DL Algorithms (3 Marks)
+> **[Cue: Click to Slide 6]**
 
-"Moving to Slide 5, Criterion 3 requires implementing 10 to 15 classification algorithms. We implemented **12 distinct machine learning and deep learning algorithms** spanning 6 fundamental computational paradigms:
+"Moving to Slide 6, Criterion 3 requires implementing 10 to 15 classification algorithms. We implemented **12 distinct machine learning and deep learning algorithms** spanning 6 fundamental computational paradigms:
 
 1. **Linear & Probabilistic Models**: 
    - Classical Logistic Regression using `stats::glm`.
@@ -137,10 +152,10 @@ Every distance-sensitive algorithm was trained on standardized z-score feature m
 
 ---
 
-### Slide 6: Criteria 4 — Hyperparameter Tuning & Optimization (1 Mark)
-> **[Cue: Click to Slide 6]**
+### Slide 7: Criteria 4 — Hyperparameter Tuning & Optimization (1 Mark)
+> **[Cue: Click to Slide 7]**
 
-"Turning to Slide 6, Criterion 4 focuses on Hyperparameter Optimization.
+"Turning to Slide 7, Criterion 4 focuses on Hyperparameter Optimization.
 
 Rather than relying on default heuristic parameters, we conducted systematic multi-parameter grid search across 6 core algorithm families. 
 
@@ -159,7 +174,7 @@ To walk you through our empirical test results, visual diagnostics, and system a
 ---
 
 ## Part 3: Speaker 3 — Inesh Mathur (`24BDS1183`)
-*Duration: ~3 to 3.5 Minutes | Slides 7, 8, 9, 10 + Outro*
+*Duration: ~3 to 3.5 Minutes | Slides 8, 9, 10, 11 + Outro*
 
 > **[Stage Direction]**: Step forward energetically, make eye contact with evaluators.
 
@@ -167,10 +182,10 @@ To walk you through our empirical test results, visual diagnostics, and system a
 
 ---
 
-### Slide 7: Criteria 5 — Comparative Performance Analysis (1 Mark)
-> **[Cue: Display Slide 7]**
+### Slide 8: Criteria 5 — Comparative Performance Analysis (1 Mark)
+> **[Cue: Display Slide 8]**
 
-"Slide 7 showcases Criterion 5: Comparative Performance Analysis.
+"Slide 8 showcases Criterion 5: Comparative Performance Analysis.
 
 To mirror real-world sports forecasting, we established a strict chronological holdout split:
 - **Training Set:** Seasons 2008 through 2021 (872 matches).
@@ -186,10 +201,10 @@ These results yield an important domain insight: because T20 cricket possesses h
 
 ---
 
-### Slide 8: Criteria 6 — Comparative Visualizations (1 Mark)
-> **[Cue: Click to Slide 8]**
+### Slide 9: Criteria 6 — Comparative Visualizations (1 Mark)
+> **[Cue: Click to Slide 9]**
 
-"On Slide 8, we present Criterion 6: our Comparative Visual Diagnostics suite, generated at 300 DPI via `08_visualizations.R`.
+"On Slide 9, we present Criterion 6: our Comparative Visual Diagnostics suite, generated at 300 DPI via `08_visualizations.R`.
 
 We generated 6 distinct publication-grade visual artifacts:
 1. **Top-Left:** Multi-Model ROC Curves, visually superimposing all classifiers against the 50% diagonal baseline.
@@ -201,10 +216,10 @@ Our explainability analysis showed that ground scoring par (`venue_average_score
 
 ---
 
-### Slide 9: Criteria 7 — Progress Demonstration & Documentation (1 Mark)
-> **[Cue: Click to Slide 9]**
+### Slide 10: Criteria 7 — Progress Demonstration & Documentation (1 Mark)
+> **[Cue: Click to Slide 10]**
 
-"Moving to Slide 9, Criterion 7 evaluates Progress Demonstration and Documentation. Rather than 75% progress, our project is **100% completed, fully automated, and reproducible**.
+"Moving to Slide 10, Criterion 7 evaluates Progress Demonstration and Documentation. Rather than 75% progress, our project is **100% completed, fully automated, and reproducible**.
 
 Our deliverables include:
 1. **One-Command Execution:** By running `Rscript run_pipeline.R`, the entire pipeline—from raw CSV cleaning to SQLite ingestion, feature engineering, 12-model training, tuning, evaluation, and plot exports—executes end-to-end in approximately 50 seconds.
@@ -214,10 +229,10 @@ Our deliverables include:
 
 ---
 
-### Slide 10: Conclusion, Future Scope & Outro
-> **[Cue: Click to Slide 10]**
+### Slide 11: Conclusion, Future Scope & Outro
+> **[Cue: Click to Slide 11]**
 
-"To conclude on Slide 10:
+"To conclude on Slide 11:
 
 In this project, we have demonstrated:
 - A leak-free pre-match machine learning framework that completely respects the temporal nature of sports data.

@@ -67,7 +67,7 @@ def build_presentation():
         # Slide Number
         tb_num = slide.shapes.add_textbox(Inches(11.5), Inches(7.05), Inches(1.0), Inches(0.3))
         p_num = tb_num.text_frame.paragraphs[0]
-        p_num.text = f"{slide_num} / 10"
+        p_num.text = f"{slide_num} / 11"
         p_num.alignment = PP_ALIGN.RIGHT
         p_num.font.size = Pt(9)
         p_num.font.bold = True
@@ -360,13 +360,104 @@ def build_presentation():
     add_notes(s3, "Criterion 1 awards 2 marks for database connectivity and data retrieval. We utilized R's DBI and RSQLite packages to host over 260,000 records. We indexed foreign and primary keys for sub-millisecond retrieval and extracted aggregate match statistics directly using structured SQL queries.")
 
     # =========================================================================
-    # SLIDE 4: Criteria 2 – Feature Engineering & Feature Selection (1 Mark)
+    # SLIDE 4: Granular Dataset Schema & Micro-Level Delivery Telemetry
     # =========================================================================
     s4 = prs.slides.add_slide(blank_layout)
-    add_header(s4, "CRITERIA 2 — 1 MARK", "Zero-Leakage Feature Engineering & Statistical Selection", 4)
+    add_header(s4, "DATASET ATTRIBUTES & DELIVERY TELEMETRY", "Granular Dataset Attributes: Ball-by-Ball Tracking & Telemetry", 4)
+
+    # Left Column: Full Dataset Attributes (matches & deliveries)
+    c_left = s4.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(5.6), Inches(5.1))
+    c_left.fill.solid()
+    c_left.fill.fore_color.rgb = C_BG_CARD
+    c_left.line.color.rgb = C_BORDER_CARD
+    tf = c_left.text_frame
+    tf.word_wrap = True
+    p = tf.paragraphs[0]
+    p.text = "FULL DATASET ATTRIBUTES INVENTORY"
+    p.font.size = Pt(12)
+    p.font.bold = True
+    p.font.color.rgb = C_PRIMARY_BLUE
+
+    p_m_hdr = tf.add_paragraph()
+    p_m_hdr.text = "\n1. matches.csv (20 Core Fixture Attributes):"
+    p_m_hdr.font.size = Pt(10)
+    p_m_hdr.font.bold = True
+    p_m_hdr.font.color.rgb = C_NAVY_DARK
+
+    p_m_cols = tf.add_paragraph()
+    p_m_cols.text = "id, season, city, date, match_type, player_of_match, venue, team1, team2, toss_winner, toss_decision, winner, result, result_margin, target_runs, target_overs, super_over, method, umpire1, umpire2."
+    p_m_cols.font.size = Pt(8.5)
+    p_m_cols.font.color.rgb = C_TEXT_DARK
+
+    p_d_hdr = tf.add_paragraph()
+    p_d_hdr.text = "\n2. deliveries.csv (17 Core Ball-by-Ball Attributes):"
+    p_d_hdr.font.size = Pt(10)
+    p_d_hdr.font.bold = True
+    p_d_hdr.font.color.rgb = C_NAVY_DARK
+
+    p_d_cols = tf.add_paragraph()
+    p_d_cols.text = "match_id, inning, batting_team, bowling_team, over, ball, batter, bowler, non_striker, batsman_runs, extra_runs, total_runs, extras_type, is_wicket, player_dismissed, dismissal_kind, fielder."
+    p_d_cols.font.size = Pt(8.5)
+    p_d_cols.font.color.rgb = C_TEXT_DARK
+
+    p_imp_hdr = tf.add_paragraph()
+    p_imp_hdr.text = "\nMicro-Level Modeling Value:"
+    p_imp_hdr.font.size = Pt(10)
+    p_imp_hdr.font.bold = True
+    p_imp_hdr.font.color.rgb = C_NAVY_DARK
+
+    p_imp_txt = tf.add_paragraph()
+    p_imp_txt.text = "• Bridges macro pre-match factors (win %, venue par) with delivery-level telemetry.\n• Powers phase-specific analysis (Powerplay, Middle Overs, Death Overs).\n• Forms the foundation for batter vs. bowler matchup interaction vectors."
+    p_imp_txt.font.size = Pt(9)
+    p_imp_txt.font.color.rgb = C_TEXT_DARK
+
+    # Right Column: Specialized Telemetry Columns (Ball Bowled & Shot Played)
+    c_right = s4.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.7), Inches(1.6), Inches(5.8), Inches(5.1))
+    c_right.fill.solid()
+    c_right.fill.fore_color.rgb = C_WHITE
+    c_right.line.color.rgb = C_BORDER_CARD
+    tf_r = c_right.text_frame
+    tf_r.word_wrap = True
+    p_r = tf_r.paragraphs[0]
+    p_r.text = "ENHANCED TELEMETRY: BALL BOWLED & SHOT PLAYED"
+    p_r.font.size = Pt(12)
+    p_r.font.bold = True
+    p_r.font.color.rgb = C_ACCENT_AMBER
+
+    # Specialized Card 1: Ball Bowled
+    p_b1 = tf_r.add_paragraph()
+    p_b1.text = "\n1. 'Ball bowled' (Bowler Delivery Dynamics):"
+    p_b1.font.size = Pt(10.5)
+    p_b1.font.bold = True
+    p_b1.font.color.rgb = C_NAVY_DARK
+
+    p_b1_desc = tf_r.add_paragraph()
+    p_b1_desc.text = "• Definition: Classifies the physical trajectory, pitch length, line, and ball variation released by the bowler.\n• Categories: Yorker, Bouncer, Good Length, Full Toss, Slower Ball (Off-cutter/Knuckleball), Outswinger, Inswinger, Googly, Leg-break, Flipper.\n• Predictive Role: Crucial for quantifying death-over yorker execution under high run-rate pressure and measuring bowling discipline against aggressive batters."
+    p_b1_desc.font.size = Pt(9)
+    p_b1_desc.font.color.rgb = C_TEXT_DARK
+
+    # Specialized Card 2: Shot Played
+    p_b2 = tf_r.add_paragraph()
+    p_b2.text = "\n2. 'Shot played' (Batsman Stroke Mechanics):"
+    p_b2.font.size = Pt(10.5)
+    p_b2.font.bold = True
+    p_b2.font.color.rgb = C_NAVY_DARK
+
+    p_b2_desc = tf_r.add_paragraph()
+    p_b2_desc.text = "• Definition: Classifies the specific stroke and footwork technique executed by the batsman in response to the delivery.\n• Categories: Cover Drive, Pull / Hook Shot, Straight Drive, Cut Shot, Forward / Backfoot Defense, Sweep / Reverse Sweep, Lofted Hit / Flick, Ramp / Scoop.\n• Predictive Role: Distinguishes attacking intent vs defensive preservation, measures shot-risk vs boundary probability, and quantifies batter vulnerability against specific bowling variations."
+    p_b2_desc.font.size = Pt(9)
+    p_b2_desc.font.color.rgb = C_TEXT_DARK
+
+    add_notes(s4, "In this slide, we present the complete attribute architecture across our matches and deliveries datasets. In addition to the standard 20 fixture attributes and 17 delivery attributes, we highlight two vital granular telemetry columns: 'Ball bowled' and 'Shot played'. 'Ball bowled' categorizes delivery dynamics such as yorkers, bouncers, length balls, and slower variations. 'Shot played' captures batsman stroke mechanics like cover drives, pull shots, sweeps, and defensive blocks. These micro-level features provide tactical depth for bowler-versus-batter matchup vectors and live in-play win probability swings.")
+
+    # =========================================================================
+    # SLIDE 5: Criteria 2 – Feature Engineering & Feature Selection (1 Mark)
+    # =========================================================================
+    s5 = prs.slides.add_slide(blank_layout)
+    add_header(s5, "CRITERIA 2 — 1 MARK", "Zero-Leakage Feature Engineering & Statistical Selection", 5)
 
     # Left Column: Features & Leakage Prevention
-    c_left = s4.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(6.0), Inches(5.1))
+    c_left = s5.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(6.0), Inches(5.1))
     c_left.fill.solid()
     c_left.fill.fore_color.rgb = C_BG_CARD
     c_left.line.color.rgb = C_BORDER_CARD
@@ -400,15 +491,15 @@ def build_presentation():
     # Right Column: Correlation Heatmap Image
     img_path = "results/plots/correlation_heatmap.png"
     if os.path.exists(img_path):
-        s4.shapes.add_picture(img_path, Inches(7.1), Inches(1.6), width=Inches(5.4))
+        s5.shapes.add_picture(img_path, Inches(7.1), Inches(1.6), width=Inches(5.4))
 
-    add_notes(s4, "In sports prediction, data leakage is the most frequent flaw. If you calculate seasonal averages using the whole tournament, future matches leak into past predictions. We solved this using a strict chronological loop. Furthermore, we conducted collinearity filtering to eliminate redundancy, retaining 15 optimal features.")
+    add_notes(s5, "In sports prediction, data leakage is the most frequent flaw. If you calculate seasonal averages using the whole tournament, future matches leak into past predictions. We solved this using a strict chronological loop. Furthermore, we conducted collinearity filtering to eliminate redundancy, retaining 15 optimal features.")
 
     # =========================================================================
-    # SLIDE 5: Criteria 3 – Implementation of 10–15 ML/DL Algorithms (3 Marks)
+    # SLIDE 6: Criteria 3 – Implementation of 10–15 ML/DL Algorithms (3 Marks)
     # =========================================================================
-    s5 = prs.slides.add_slide(blank_layout)
-    add_header(s5, "CRITERIA 3 — 3 MARKS", "Comprehensive Benchmark: 12 ML & DL Algorithms", 5)
+    s6 = prs.slides.add_slide(blank_layout)
+    add_header(s6, "CRITERIA 3 — 3 MARKS", "Comprehensive Benchmark: 12 ML & DL Algorithms", 6)
 
     families = [
         ("Linear & Probabilistic", [
@@ -441,7 +532,7 @@ def build_presentation():
     ]
 
     for (fam_name, m_list), (cx, cy, cw, ch) in zip(families, card_coords):
-        card = s5.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy, cw, ch)
+        card = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy, cw, ch)
         card.fill.solid()
         card.fill.fore_color.rgb = C_BG_CARD
         card.line.color.rgb = C_BORDER_CARD
@@ -463,18 +554,18 @@ def build_presentation():
             p1.runs[1].font.bold = False
             p1.runs[1].font.color.rgb = C_TEXT_DARK
 
-    add_notes(s5, "The evaluation rubric requires 10 to 15 algorithms. We implemented 12 distinct classifiers spanning classical linear baselines, non-linear kernel methods, bagging, boosting, and neural networks. All distance-dependent models, such as KNN, SVM, and MLP, were trained on standardized z-score matrices.")
+    add_notes(s6, "The evaluation rubric requires 10 to 15 algorithms. We implemented 12 distinct classifiers spanning classical linear baselines, non-linear kernel methods, bagging, boosting, and neural networks. All distance-dependent models, such as KNN, SVM, and MLP, were trained on standardized z-score matrices.")
 
     # =========================================================================
-    # SLIDE 6: Criteria 4 – Hyperparameter Tuning & Model Optimization (1 Mark)
+    # SLIDE 7: Criteria 4 – Hyperparameter Tuning & Model Optimization (1 Mark)
     # =========================================================================
-    s6 = prs.slides.add_slide(blank_layout)
-    add_header(s6, "CRITERIA 4 — 1 MARK", "Hyperparameter Optimization & Grid Search Tuning", 6)
+    s7 = prs.slides.add_slide(blank_layout)
+    add_header(s7, "CRITERIA 4 — 1 MARK", "Hyperparameter Optimization & Grid Search Tuning", 7)
 
     # Left Column: Tuning Table
     rows = 7
     cols = 5
-    t_shape = s6.shapes.add_table(rows, cols, Inches(0.8), Inches(1.6), Inches(6.8), Inches(5.0))
+    t_shape = s7.shapes.add_table(rows, cols, Inches(0.8), Inches(1.6), Inches(6.8), Inches(5.0))
     table = t_shape.table
     table.columns[0].width = Inches(1.7)
     table.columns[1].width = Inches(1.8)
@@ -514,20 +605,20 @@ def build_presentation():
     # Right Column: Tuning Improvement Plot
     img_path = "results/plots/hyperparameter_tuning_improvement.png"
     if os.path.exists(img_path):
-        s6.shapes.add_picture(img_path, Inches(7.8), Inches(1.6), width=Inches(4.8))
+        s7.shapes.add_picture(img_path, Inches(7.8), Inches(1.6), width=Inches(4.8))
 
-    add_notes(s6, "Hyperparameter tuning yielded substantial accuracy gains across every single algorithm family. For example, by optimizing neighborhood size from 3 to 11 in KNN, accuracy jumped by over 9%, and regularizing tree depths in Random Forest prevented severe test-set overfitting.")
+    add_notes(s7, "Hyperparameter tuning yielded substantial accuracy gains across every single algorithm family. For example, by optimizing neighborhood size from 3 to 11 in KNN, accuracy jumped by over 9%, and regularizing tree depths in Random Forest prevented severe test-set overfitting.")
 
     # =========================================================================
-    # SLIDE 7: Criteria 5 & Results – Comparative Performance Analysis (1 Mark)
+    # SLIDE 8: Criteria 5 & Results – Comparative Performance Analysis (1 Mark)
     # =========================================================================
-    s7 = prs.slides.add_slide(blank_layout)
-    add_header(s7, "CRITERIA 5 — 1 MARK", "Comparative Performance Analysis: Empirical Results", 7)
+    s8 = prs.slides.add_slide(blank_layout)
+    add_header(s8, "CRITERIA 5 — 1 MARK", "Comparative Performance Analysis: Empirical Results", 8)
 
     # Left Column: Full 12-Model Results Table
     rows = 13
     cols = 6
-    t_shape = s7.shapes.add_table(rows, cols, Inches(0.8), Inches(1.6), Inches(6.8), Inches(5.1))
+    t_shape = s8.shapes.add_table(rows, cols, Inches(0.8), Inches(1.6), Inches(6.8), Inches(5.1))
     table = t_shape.table
     table.columns[0].width = Inches(1.9)
     table.columns[1].width = Inches(1.0)
@@ -575,15 +666,15 @@ def build_presentation():
     # Right Column: Model Accuracy Comparison Chart
     img_path = "results/plots/model_accuracy_comparison.png"
     if os.path.exists(img_path):
-        s7.shapes.add_picture(img_path, Inches(7.8), Inches(1.6), width=Inches(4.8))
+        s8.shapes.add_picture(img_path, Inches(7.8), Inches(1.6), width=Inches(4.8))
 
-    add_notes(s7, "This slide presents our comparative benchmark on the 2022 to 2024 test seasons. Decision Trees and KNN achieved the highest test accuracy and F1 scores. Random Forest attained the highest overall ROC-AUC at 0.5951, demonstrating high probability ranking calibration despite lower raw threshold accuracy.")
+    add_notes(s8, "This slide presents our comparative benchmark on the 2022 to 2024 test seasons. Decision Trees and KNN achieved the highest test accuracy and F1 scores. Random Forest attained the highest overall ROC-AUC at 0.5951, demonstrating high probability ranking calibration despite lower raw threshold accuracy.")
 
     # =========================================================================
-    # SLIDE 8: Criteria 6 – Comparative Visualizations (1 Mark)
+    # SLIDE 9: Criteria 6 – Comparative Visualizations (1 Mark)
     # =========================================================================
-    s8 = prs.slides.add_slide(blank_layout)
-    add_header(s8, "CRITERIA 6 — 1 MARK", "Visual Model Diagnostics & Interpretability Suite", 8)
+    s9 = prs.slides.add_slide(blank_layout)
+    add_header(s9, "CRITERIA 6 — 1 MARK", "Visual Model Diagnostics & Interpretability Suite", 9)
 
     # 4 Visual Deliverables Cards with Images
     v_cards = [
@@ -594,7 +685,7 @@ def build_presentation():
     ]
 
     for title, img_file, cx, cy, cw, ch in v_cards:
-        card = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy, cw, ch)
+        card = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy, cw, ch)
         card.fill.solid()
         card.fill.fore_color.rgb = C_BG_CARD
         card.line.color.rgb = C_BORDER_CARD
@@ -606,18 +697,18 @@ def build_presentation():
         p.font.color.rgb = C_PRIMARY_BLUE
 
         if os.path.exists(img_file):
-            s8.shapes.add_picture(img_file, cx + Inches(0.2), cy + Inches(0.4), width=cw - Inches(0.4), height=ch - Inches(0.5))
+            s9.shapes.add_picture(img_file, cx + Inches(0.2), cy + Inches(0.4), width=cw - Inches(0.4), height=ch - Inches(0.5))
 
-    add_notes(s8, "For Criterion 6, we generated an extensive visual suite. We produced superimposed ROC curves, 12 individual confusion matrix heatmaps, multi-metric heatmaps, and feature importance bar charts comparing Gini impurity with permutation drop in AUC.")
+    add_notes(s9, "For Criterion 6, we generated an extensive visual suite. We produced superimposed ROC curves, 12 individual confusion matrix heatmaps, multi-metric heatmaps, and feature importance bar charts comparing Gini impurity with permutation drop in AUC.")
 
     # =========================================================================
-    # SLIDE 9: Criteria 7 – Progress Demonstration & Documentation (1 Mark)
+    # SLIDE 10: Criteria 7 – Progress Demonstration & Documentation (1 Mark)
     # =========================================================================
-    s9 = prs.slides.add_slide(blank_layout)
-    add_header(s9, "CRITERIA 7 — 1 MARK", "System Automation, Reproducibility & Project Delivery", 9)
+    s10 = prs.slides.add_slide(blank_layout)
+    add_header(s10, "CRITERIA 7 — 1 MARK", "System Automation, Reproducibility & Project Delivery", 10)
 
     # Left Column: Automation & CLI
-    c_left = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(5.6), Inches(5.1))
+    c_left = s10.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(5.6), Inches(5.1))
     c_left.fill.solid()
     c_left.fill.fore_color.rgb = C_BG_CARD
     c_left.line.color.rgb = C_BORDER_CARD
@@ -654,7 +745,7 @@ def build_presentation():
     p_cli.runs[2].font.color.rgb = C_TEXT_DARK
 
     # Right Column: Documentation & Git Verification
-    c_right = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.7), Inches(1.6), Inches(5.8), Inches(5.1))
+    c_right = s10.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.7), Inches(1.6), Inches(5.8), Inches(5.1))
     c_right.fill.solid()
     c_right.fill.fore_color.rgb = C_WHITE
     c_right.line.color.rgb = C_BORDER_CARD
@@ -683,16 +774,16 @@ def build_presentation():
         p1.runs[1].font.bold = False
         p1.runs[1].font.color.rgb = C_TEXT_DARK
 
-    add_notes(s9, "Criterion 7 assesses progress demonstration and documentation. Rather than 75% completion, our pipeline is 100% completed and fully automated. By running `Rscript run_pipeline.R`, the complete database is rebuilt, all 12 models are re-trained, and all visualizations are generated reproducibly.")
+    add_notes(s10, "Criterion 7 assesses progress demonstration and documentation. Rather than 75% completion, our pipeline is 100% completed and fully automated. By running `Rscript run_pipeline.R`, the complete database is rebuilt, all 12 models are re-trained, and all visualizations are generated reproducibly.")
 
     # =========================================================================
-    # SLIDE 10: Conclusion & Future Scope
+    # SLIDE 11: Conclusion & Future Scope
     # =========================================================================
-    s10 = prs.slides.add_slide(blank_layout)
-    add_header(s10, "PROJECT WRAP-UP", "Conclusion & Future Research Avenues", 10)
+    s11 = prs.slides.add_slide(blank_layout)
+    add_header(s11, "PROJECT WRAP-UP", "Conclusion & Future Research Avenues", 11)
 
     # Left Column: Key Achievements
-    c_left = s10.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(5.6), Inches(5.1))
+    c_left = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), Inches(5.6), Inches(5.1))
     c_left.fill.solid()
     c_left.fill.fore_color.rgb = C_BG_CARD
     c_left.line.color.rgb = C_BORDER_CARD
@@ -722,7 +813,7 @@ def build_presentation():
         p1.runs[1].font.color.rgb = C_TEXT_DARK
 
     # Right Column: Future Enhancements
-    c_right = s10.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.7), Inches(1.6), Inches(5.8), Inches(5.1))
+    c_right = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.7), Inches(1.6), Inches(5.8), Inches(5.1))
     c_right.fill.solid()
     c_right.fill.fore_color.rgb = C_WHITE
     c_right.line.color.rgb = C_BORDER_CARD
@@ -751,7 +842,7 @@ def build_presentation():
         p1.runs[1].font.size = Pt(9.5)
         p1.runs[1].font.color.rgb = C_TEXT_DARK
 
-    add_notes(s10, "In conclusion, we have built a fully reproducible, leak-free, explainable machine learning system for IPL match prediction that completely fulfills all evaluation requirements. Future work will explore in-play ball-by-ball win predictors and player-level matchup embeddings. Thank you, and I welcome any questions.")
+    add_notes(s11, "In conclusion, we have built a fully reproducible, leak-free, explainable machine learning system for IPL match prediction that completely fulfills all evaluation requirements. Future work will explore in-play ball-by-ball win predictors and player-level matchup embeddings. Thank you, and I welcome any questions.")
 
     out_file = "IPL_Match_Outcome_Prediction_Presentation.pptx"
     prs.save(out_file)

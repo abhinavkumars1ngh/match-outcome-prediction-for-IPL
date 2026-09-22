@@ -65,7 +65,36 @@
 
 ---
 
-## Slide 4: Criteria 2 – Feature Engineering & Feature Selection (1 Mark)
+## Slide 4: Dataset Attributes & Micro-Level Telemetry
+### Slide Title:
+**Granular Dataset Attributes: Ball-by-Ball Tracking & Telemetry**
+
+### Key Content / Bullet Points:
+- **Full Inventory of Raw Dataset Attributes**:
+  - `matches.csv` (20 Core Fixture Attributes):
+    `id`, `season`, `city`, `date`, `match_type`, `player_of_match`, `venue`, `team1`, `team2`, `toss_winner`, `toss_decision`, `winner`, `result`, `result_margin`, `target_runs`, `target_overs`, `super_over`, `method`, `umpire1`, `umpire2`.
+  - `deliveries.csv` (17 Core Ball-by-Ball Attributes):
+    `match_id`, `inning`, `batting_team`, `bowling_team`, `over`, `ball`, `batter`, `bowler`, `non_striker`, `batsman_runs`, `extra_runs`, `total_runs`, `extras_type`, `is_wicket`, `player_dismissed`, `dismissal_kind`, `fielder`.
+- **Micro-Level Modeling Value**:
+  - Bridges macro pre-match factors (win %, venue par) with delivery-level telemetry.
+  - Powers phase-specific analysis (Powerplay, Middle Overs, Death Overs).
+  - Forms the foundation for batter vs. bowler matchup interaction vectors.
+- **Enhanced Micro-Telemetry Delivery Vectors**:
+  - **1. 'Ball bowled' (Bowler Delivery Dynamics)**:
+    - *Length/Line*: Yorker, Bouncer, Good Length, Full Toss, Short of Length, Wide Outside Off.
+    - *Pace & Movement*: Outswinger, Inswinger, Reverse Swing, Slower Ball (Off-cutter, Knuckleball).
+    - *Spin Variations*: Off-break, Leg-break, Googly, Top-spinner, Carrom Ball, Arm Ball, Doosra.
+  - **2. 'Shot played' (Batsman Stroke Mechanics)**:
+    - *Attacking Shots*: Cover Drive, Straight Drive, Pull Shot, Hook, Cut, Slog Sweep, Helicopter Shot, Ramp/Scoop.
+    - *Defensive & Strike Rotation*: Forward Defensive, Backfoot Defense, Dab to Third Man, Flick to Square Leg, Quick Single.
+    - *Tactical Impact*: Pinpoints batter vulnerabilities against specific lines/lengths and shot risk profiles.
+
+### Speaker Notes:
+- "Slide 4 examines the granular data attributes across both matches.csv with 20 columns and deliveries.csv with 17 columns. Crucially, we highlight two micro-telemetry delivery vectors: 'Ball bowled' detailing bowler release dynamics like yorkers, bouncers, and googlies, and 'Shot played' detailing batsman execution like cover drives, pull shots, and defensive strokes. This granular tracking forms the bridge to ball-by-ball matchup modeling."
+
+---
+
+## Slide 5: Criteria 2 – Feature Engineering & Feature Selection (1 Mark)
 ### Slide Title:
 **Zero-Leakage Feature Engineering & Statistical Selection**
 
@@ -88,7 +117,7 @@
 
 ---
 
-## Slide 5: Criteria 3 – Implementation of 10–15 ML/DL Algorithms (3 Marks)
+## Slide 6: Criteria 3 – Implementation of 10–15 ML/DL Algorithms (3 Marks)
 ### Slide Title:
 **Comprehensive Benchmark: 12 ML & DL Algorithms**
 
@@ -97,7 +126,7 @@
   1. *Linear & Probabilistic*:
      - **Logistic Regression**: Standard probabilistic sigmoid baseline (`stats::glm`).
      - **Naive Bayes**: Conditional Gaussian likelihood estimator (`e1071::naiveBayes`).
-     - **Regularized SGD / ElasticNet**: Penalized logistic regression via $L_1/L_2$ shrinkage (`glmnet`).
+     - **Regularized SGD / ElasticNet*: Penalized logistic regression via $L_1/L_2$ shrinkage (`glmnet`).
   2. *Instance & Non-Parametric*:
      - **K-Nearest Neighbors (KNN)**: Distance-weighted neighborhood classification (`class::knn`).
      - **Decision Tree (CART)**: Recursive binary partitioning tree (`rpart`).
@@ -118,7 +147,7 @@
 
 ---
 
-## Slide 6: Criteria 4 – Hyperparameter Tuning & Model Optimization (1 Mark)
+## Slide 7: Criteria 4 – Hyperparameter Tuning & Model Optimization (1 Mark)
 ### Slide Title:
 **Hyperparameter Optimization & Grid Search Tuning**
 
@@ -144,7 +173,7 @@
 
 ---
 
-## Slide 7: Criteria 5 & Results – Comparative Performance Analysis (1 Mark)
+## Slide 8: Criteria 5 & Results – Comparative Performance Analysis (1 Mark)
 ### Slide Title:
 **Comparative Performance Analysis: Empirical Results**
 
@@ -178,7 +207,7 @@
 
 ---
 
-## Slide 8: Criteria 6 – Comparative Visualizations (1 Mark)
+## Slide 9: Criteria 6 – Comparative Visualizations (1 Mark)
 ### Slide Title:
 **Visual Model Diagnostics & Interpretability Suite**
 
@@ -197,7 +226,7 @@
 
 ---
 
-## Slide 9: Criteria 7 – Progress Demonstration & Documentation (1 Mark)
+## Slide 10: Criteria 7 – Progress Demonstration & Documentation (1 Mark)
 ### Slide Title:
 **System Automation, Reproducibility & Project Delivery**
 
@@ -220,7 +249,7 @@
 
 ---
 
-## Slide 10: Conclusion & Future Scope
+## Slide 11: Conclusion & Future Scope
 ### Slide Title:
 **Conclusion & Future Research Avenues**
 

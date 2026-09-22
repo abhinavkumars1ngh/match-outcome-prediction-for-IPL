@@ -159,14 +159,44 @@ compare_models <- function(models_to_filter = NULL) {
   cat("====================================================================\n\n")
 }
 
-# Quick demonstration if run from command line
+# ------------------------------------------------------------------------------
+# 4. Batter vs. Bowler Head-to-Head Matchup Analytics
+# ------------------------------------------------------------------------------
+query_matchup <- function(batter, bowler, venue = NULL, over = NULL) {
+  matchup_script <- if (file.exists("R/09_matchup_analysis.R")) "R/09_matchup_analysis.R" else "09_matchup_analysis.R"
+  source(matchup_script)
+  analyze_matchup(batter, bowler, venue_name = venue, current_over = over, db_path = db_path)
+}
+
+# Quick demonstration or CLI routing if run from command line
 if (!interactive()) {
-  cat("Demonstration 1: Win probability of Mumbai Indians at Wankhede Stadium\n")
-  get_team_venue_probability("Mumbai Indians", "Wankhede")
+  args <- commandArgs(trailingOnly = TRUE)
   
-  cat("Demonstration 2: Head-to-Head comparison of Mumbai Indians vs Chennai Super Kings\n")
-  compare_teams("Mumbai Indians", "Chennai Super Kings")
-  
-  cat("Demonstration 3: Comparison of Random Forest, SVM, and Logistic Regression\n")
-  compare_models(c("Random Forest", "SVM", "Logistic Regression"))
+  if (length(args) >= 3 && tolower(args[1]) %in% c("matchup", "h2h", "player")) {
+    # e.g.: Rscript interactive_query.R matchup "Rohit Sharma" "Sunil Narine"
+    btr <- args[2]
+    bwl <- args[3]
+    ven <- if (length(args) >= 4) args[4] else NULL
+    ovr <- if (length(args) >= 5) as.numeric(args[5]) else NULL
+    query_matchup(btr, bwl, venue = ven, over = ovr)
+  } else if (length(args) >= 2 && tolower(args[1]) %in% c("prob", "venue")) {
+    get_team_venue_probability(args[2], if (length(args) >= 3) args[3] else NULL)
+  } else if (length(args) >= 3 && tolower(args[1]) %in% c("teams", "team_h2h")) {
+    compare_teams(args[2], args[3])
+  } else {
+    cat("====================================================================\n")
+    cat("               INTERACTIVE IPL QUERY DEMONSTRATIONS                 \n")
+    cat("====================================================================\n")
+    cat("Demonstration 1: Win probability of Mumbai Indians at Wankhede Stadium\n")
+    get_team_venue_probability("Mumbai Indians", "Wankhede")
+    
+    cat("Demonstration 2: Head-to-Head comparison of Mumbai Indians vs Chennai Super Kings\n")
+    compare_teams("Mumbai Indians", "Chennai Super Kings")
+    
+    cat("Demonstration 3: Comparison of Random Forest, SVM, and Logistic Regression\n")
+    compare_models(c("Random Forest", "SVM", "Logistic Regression"))
+    
+    cat("Demonstration 4: Micro Matchup — Rohit Sharma vs. Sunil Narine\n")
+    query_matchup("Rohit Sharma", "Sunil Narine")
+  }
 }
