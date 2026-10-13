@@ -1,0 +1,150 @@
+/* HeadToHead.css */
+.h2h-container { padding: 4px 0; }
+
+/* H2H Record */
+.h2h-record {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.h2h-team-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+.h2h-wins {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.h2h-team-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(148,163,184,0.8);
+  text-align: center;
+  max-width: 120px;
+}
+.h2h-pct {
+  font-size: 0.75rem;
+  color: rgba(100,116,139,0.7);
+}
+
+.h2h-center {
+  flex-shrink: 0;
+  text-align: center;
+}
+.h2h-total {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(148,163,184,0.5);
+}
+.h2h-total-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(100,116,139,0.6);
+}
+
+/* Recent Form */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.form-team-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(148,163,184,0.8);
+  flex: 0 0 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.form-badges {
+  display: flex;
+  gap: 6px;
+}
+.form-badge {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.form-badge.win {
+  background: rgba(34,197,94,0.15);
+  color: var(--green-400);
+  border: 1px solid rgba(34,197,94,0.25);
+}
+.form-badge.loss {
+  background: rgba(239,68,68,0.1);
+  color: var(--red-400);
+  border: 1px solid rgba(239,68,68,0.2);
+}
+
+/* Encounters */
+.encounters-section { display: flex; flex-direction: column; gap: 2px; }
+.encounters-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(100,116,139,0.7);
+  margin-bottom: 10px;
+}
+.encounter-row {
+  display: grid;
+  grid-template-columns: 130px 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-md);
+  transition: background var(--duration-fast);
+}
+.encounter-row:hover { background: rgba(255,255,255,0.04); }
+.encounter-date {
+  font-size: 0.75rem;
+  color: rgba(100,116,139,0.7);
+}
+.encounter-venue {
+  font-size: 0.8125rem;
+  color: rgba(148,163,184,0.8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.encounter-winner {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.encounter-margin {
+  font-size: 0.75rem;
+  color: rgba(100,116,139,0.6);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .form-team-label { flex: 0 0 100px; }
+  .encounter-row { grid-template-columns: 1fr auto; }
+  .encounter-venue, .encounter-date { display: none; }
+}

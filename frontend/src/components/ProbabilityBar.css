@@ -1,0 +1,139 @@
+/* ProbabilityBar.css */
+.prob-bar-container {
+  padding: 4px 0;
+}
+
+/* Labels row */
+.prob-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+.prob-team-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+.prob-team-label.right {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.prob-team-label.winner .prob-team-name {
+  color: white;
+}
+
+.prob-team-avatar {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.prob-team-name {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: rgba(226,232,240,0.9);
+  line-height: 1.2;
+}
+.prob-team-name.right { text-align: right; }
+
+.prob-winner-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--amber-300);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+}
+.prob-winner-badge.right { text-align: right; }
+
+.prob-center { flex-shrink: 0; }
+.prob-vs {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: rgba(100,116,139,0.6);
+  letter-spacing: 0.1em;
+}
+
+/* Main bar */
+.prob-bar-wrapper { margin-bottom: 16px; }
+.prob-bar {
+  display: flex;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  gap: 2px;
+}
+.prob-fill {
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+}
+.prob-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 60%);
+  border-radius: inherit;
+}
+
+.prob-percentages {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.prob-pct {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Confidence row */
+.confidence-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.conf-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(100,116,139,0.7);
+  flex-shrink: 0;
+  width: 80px;
+}
+.conf-bar-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.conf-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+.conf-value {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--electric);
+  flex-shrink: 0;
+  width: 50px;
+  text-align: right;
+}

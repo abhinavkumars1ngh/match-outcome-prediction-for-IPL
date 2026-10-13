@@ -1,0 +1,99 @@
+/* TeamCard.css */
+.team-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+}
+.team-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--team-primary, #1e3a7d), transparent);
+  opacity: 0;
+  transition: opacity var(--duration-normal);
+}
+.team-card:hover {
+  border-color: rgba(255,255,255,0.16);
+  transform: translateY(-1px);
+}
+.team-card:hover::before { opacity: 0.07; }
+
+.team-card.selected {
+  border-color: var(--team-primary, var(--violet-500));
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 0 0 1px var(--team-primary, var(--violet-500));
+}
+.team-card.selected::before { opacity: 0.12; }
+
+.team-avatar {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.team-initials {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  letter-spacing: 0.02em;
+}
+
+.team-info { flex: 1; min-width: 0; z-index: 1; }
+.team-name {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.team-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+}
+.team-stat {
+  font-size: 0.72rem;
+  color: rgba(148,163,184,0.7);
+}
+.team-titles {
+  font-size: 0.7rem;
+  color: var(--amber-300);
+}
+
+.team-selected-ring {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--team-primary, var(--violet-500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.team-selected-ring::after {
+  content: '✓';
+  font-size: 10px;
+  color: white;
+  font-weight: 900;
+}

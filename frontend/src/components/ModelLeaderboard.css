@@ -1,0 +1,94 @@
+/* ModelLeaderboard.css */
+.leaderboard { padding: 4px 0; }
+
+.leaderboard-header {
+  display: grid;
+  grid-template-columns: 1fr 90px 80px 90px 140px;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(100,116,139,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 6px;
+}
+
+.lb-row {
+  display: grid;
+  grid-template-columns: 1fr 90px 80px 90px 140px;
+  gap: 8px;
+  align-items: center;
+  padding: 11px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all var(--duration-fast);
+}
+.lb-row:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+}
+.lb-row.top {
+  background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(0,212,255,0.04));
+  border-color: rgba(124,58,237,0.15);
+}
+
+.lb-col-model {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+.lb-rank { font-size: 1rem; flex-shrink: 0; }
+.lb-icon { font-size: 0.875rem; flex-shrink: 0; }
+.lb-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(226,232,240,0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lb-col-metric {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(148,163,184,0.9);
+  text-align: right;
+}
+.lb-acc {
+  color: var(--electric);
+  font-size: 0.875rem;
+}
+.lb-row.top .lb-acc { color: var(--amber-300); }
+
+.lb-col-bar { overflow: hidden; }
+.lb-bar-track {
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.lb-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s var(--ease-out);
+}
+
+.leaderboard-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .leaderboard-header,
+  .lb-row {
+    grid-template-columns: 1fr 70px 70px;
+  }
+  .lb-col-bar,
+  .lb-col-metric:last-of-type { display: none; }
+}
