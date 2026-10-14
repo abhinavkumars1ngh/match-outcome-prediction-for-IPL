@@ -1,49 +1,50 @@
-/* Hero.css */
+/* Hero.css — Clean Cricbuzz-inspired header card */
 .hero {
   text-align: center;
-  padding: 80px 24px 60px;
-  position: relative;
-  overflow: hidden;
+  padding: 36px 20px 28px;
+  background: #ffffff;
+  border: 1px solid var(--cb-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
-  background: rgba(0,212,255,0.08);
-  border: 1px solid rgba(0,212,255,0.18);
+  padding: 4px 12px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
   border-radius: 99px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--electric);
-  margin-bottom: 24px;
+  color: #0f172a;
+  margin-bottom: 16px;
 }
 .eyebrow-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--electric);
-  box-shadow: 0 0 8px var(--electric);
-  animation: pulse-ring 2s ease infinite;
+  background: var(--cb-green);
 }
 
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
   font-weight: 900;
-  line-height: 1.05;
-  color: white;
+  line-height: 1.15;
+  color: #0f172a;
   letter-spacing: -0.02em;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .hero-sub {
-  max-width: 560px;
-  margin: 0 auto 40px;
-  font-size: 1.0625rem;
-  color: rgba(148,163,184,0.85);
-  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto 24px;
+  font-size: 0.95rem;
+  color: var(--cb-text-secondary);
+  line-height: 1.6;
 }
 
 /* Stats row */
@@ -51,74 +52,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
-  margin-bottom: 40px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 16px;
-  padding: 20px 32px;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
+  margin: 0 auto 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 14px 24px;
+  max-width: 580px;
 }
 .hero-stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   flex: 1;
 }
 .hero-stat-value {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 900;
   line-height: 1;
+  color: #0f172a;
 }
 .hero-stat-label {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(148,163,184,0.6);
+  letter-spacing: 0.06em;
+  color: var(--cb-text-muted);
 }
 .hero-stat-divider {
   width: 1px;
-  height: 40px;
-  background: rgba(255,255,255,0.08);
+  height: 32px;
+  background: #cbd5e1;
   flex-shrink: 0;
 }
 
 .hero-cta {
-  font-size: 1.0625rem;
-  padding: 16px 40px;
+  font-size: 0.95rem;
+  padding: 12px 32px;
 }
 
-/* Decorative pitch lines */
 .hero-pitch-deco {
-  position: absolute;
-  bottom: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  opacity: 0.15;
-}
-.pitch-line {
-  width: 100%;
-  height: 1px;
-  background: white;
-}
-.pitch-crease {
-  width: 60%;
-  height: 1px;
-  background: white;
+  display: none;
 }
 
 @media (max-width: 500px) {
-  .hero { padding: 48px 16px 40px; }
-  .hero-stats { flex-wrap: wrap; gap: 16px; padding: 16px; }
+  .hero { padding: 24px 16px; }
+  .hero-stats { flex-wrap: wrap; gap: 12px; padding: 12px; }
   .hero-stat-divider { display: none; }
 }

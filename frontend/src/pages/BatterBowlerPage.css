@@ -1,0 +1,374 @@
+/* BatterBowlerPage.css */
+.batter-bowler-page { padding: 8px 0; }
+
+.header-badge-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.selection-card {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.selectors-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.player-selector-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chosen-pill {
+  padding: 8px 12px;
+  background: var(--green-100);
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--green-900);
+}
+.vs-divider {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-muted);
+  padding: 0 10px;
+}
+
+.autocomplete-wrap {
+  position: relative;
+}
+.options-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 50;
+  max-height: 220px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+.option-item {
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-light);
+}
+.option-item:hover {
+  background: var(--green-50);
+  color: var(--green-800);
+  font-weight: 600;
+}
+
+/* Matchup Context Row (Venue & Phase) */
+.matchup-context-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.context-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phase-pill-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.phase-btn {
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.phase-btn:hover {
+  border-color: var(--green-600);
+  color: var(--green-800);
+}
+
+.phase-btn.active {
+  background: var(--green-700);
+  color: #ffffff;
+  border-color: var(--green-700);
+}
+
+.analyze-action {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Matchup Banner */
+.matchup-banner {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.player-side {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.player-side.right {
+  text-align: right;
+}
+.player-badge-initials {
+  width: 48px; height: 48px;
+  border-radius: 8px;
+  background: var(--green-700);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+.player-badge-initials.bowler {
+  background: #b45309;
+}
+.player-side h3 {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+.role-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.matchup-score-center {
+  text-align: center;
+}
+.headline-stats {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--text-dark);
+}
+.h-runs { color: var(--green-700); }
+.h-balls { color: #b45309; }
+.h-sep {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0 8px;
+}
+.h-dismissals {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.filter-active-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.metric-card {
+  padding: 16px 20px;
+  text-align: center;
+}
+.m-val {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--green-800);
+}
+.m-lbl {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.m-desc {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* Tactical Insights Card */
+.tactical-insights-card {
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--green-700);
+}
+
+.tactical-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tactical-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.tactical-text {
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.tactical-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.verdict-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.03em;
+}
+
+.verdict-pill.batter {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.verdict-pill.bowler {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.verdict-pill.balanced {
+  background: #fef08a;
+  color: #854d0e;
+}
+
+.baseline-comp-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+/* Phase Breakdown Table Card */
+.phase-table-card {
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.phase-table-card h4 {
+  margin: 0 0 14px 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.phase-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.phase-table th {
+  background: #f8fafc;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.phase-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+.phase-table tr.active-row {
+  background: #f0fdf4;
+}
+
+.phase-cell-name {
+  color: var(--green-800);
+}
+
+.badge-out {
+  display: inline-block;
+  padding: 2px 6px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.technical-limitations-card {
+  padding: 20px 24px;
+  background: #f9fafb;
+}
+.technical-limitations-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.note-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.limitations-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-800);
+}
+
+@media (max-width: 768px) {
+  .selectors-row { flex-direction: column; }
+  .matchup-context-row { grid-template-columns: 1fr; }
+  .vs-divider { display: none; }
+  .matchup-banner { flex-direction: column; gap: 16px; }
+  .player-side.right { text-align: left; }
+}

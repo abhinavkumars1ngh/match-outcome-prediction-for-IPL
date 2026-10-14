@@ -1,0 +1,99 @@
+/* MatchStrip.css — Clean horizontal Cricbuzz-style fixture ticker */
+.match-strip-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid var(--cb-border);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.match-strip-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #0f172a;
+  white-space: nowrap;
+  padding: 4px 8px;
+  background: #ffcb05;
+  border-radius: 4px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0f172a;
+}
+
+.match-strip-scroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+}
+
+.match-strip-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.match-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.match-chip:hover {
+  background: #ffffff;
+  border-color: #ffcb05;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transform: translateY(-1px);
+}
+
+.match-chip-teams {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.chip-t1 { color: #0f172a; }
+.chip-vs { font-size: 0.65rem; color: #94a3b8; font-weight: 600; }
+.chip-t2 { color: #0f172a; }
+
+.match-chip-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+}
+
+.chip-badge {
+  color: var(--cb-green);
+  font-weight: 700;
+}
+
+.chip-record {
+  color: #64748b;
+  font-weight: 500;
+}

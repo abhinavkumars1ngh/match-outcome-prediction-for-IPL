@@ -1,0 +1,73 @@
+/* StatsPage.css */
+.stats-page { padding: 8px 0; }
+
+.filter-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.filter-group {
+  flex: 1;
+  min-width: 220px;
+}
+.filter-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.stats-summary-strip {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.summary-pill {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pill-val {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--green-800);
+  line-height: 1;
+}
+.pill-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.leaderboards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.leaderboard-card {
+  padding: 18px 20px;
+}
+.score-highlight {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--green-700);
+}
+.wicket-highlight {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: #b45309;
+}
+
+@media (max-width: 840px) {
+  .leaderboards-grid { grid-template-columns: 1fr; }
+}

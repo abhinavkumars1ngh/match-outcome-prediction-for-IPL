@@ -1,0 +1,196 @@
+/* TeamsPage.css */
+.teams-page { padding: 8px 0; }
+.page-header { margin-bottom: 24px; }
+.page-title {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.page-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.team-overview-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.team-overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  border-color: var(--team-accent, var(--green-700));
+}
+
+.team-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.team-avatar-box {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 900;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.team-card-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+.team-card-abbr {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.team-card-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  background: #f9fafb;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  text-align: center;
+}
+.team-stat-col {
+  display: flex;
+  flex-direction: column;
+}
+.team-stat-col .stat-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.team-stat-col .stat-val {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+.team-stat-col .win-pct { color: var(--green-700); }
+
+.team-card-footer {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--green-700);
+  text-align: right;
+  margin-top: auto;
+}
+
+/* Detail View */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--green-800);
+  background: var(--green-100);
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.back-btn:hover { background: #bbf7d0; }
+
+.detail-banner {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.detail-banner h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+.detail-tags {
+  display: flex;
+  gap: 8px;
+}
+.detail-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+.title-tag { background: #fef3c7; color: #b45309; }
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.summary-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: center;
+}
+.summary-card.highlight {
+  background: var(--green-50);
+  border-color: #bbf7d0;
+}
+.summary-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-dark);
+}
+.summary-card.highlight .summary-num { color: var(--green-700); }
+.summary-lbl {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.detail-tables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.detail-table-card { padding: 18px 20px; }
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+@media (max-width: 800px) {
+  .detail-tables-grid { grid-template-columns: 1fr; }
+}
