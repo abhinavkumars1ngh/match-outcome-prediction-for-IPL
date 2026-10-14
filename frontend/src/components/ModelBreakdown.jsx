@@ -1,18 +1,7 @@
 // ModelBreakdown.jsx — Per-model probability comparison
 import React from 'react';
+import { IconTarget } from './Icons';
 import './ModelBreakdown.css';
-
-const MODEL_ICONS = {
-  'Logistic Regression': '📊',
-  'Decision Tree': '🌳',
-  'Random Forest': '🌲',
-  'KNN': '🔵',
-  'Naive Bayes': '📐',
-  'SVM': '⚡',
-  'AdaBoost': '🚀',
-  'Gradient Boosting': '🔥',
-  'MLP': '🧠',
-};
 
 export default function ModelBreakdown({ breakdown, consensus, team1, team2, benchmarks }) {
   if (!breakdown) return null;
@@ -32,7 +21,7 @@ export default function ModelBreakdown({ breakdown, consensus, team1, team2, ben
       {/* Consensus headline */}
       <div className="consensus-row">
         <div className="consensus-label">
-          <span className="consensus-icon">🎯</span>
+          <IconTarget size={16} className="consensus-icon" />
           <span>Multi-Model Consensus</span>
         </div>
         <div className="consensus-values">
@@ -49,17 +38,16 @@ export default function ModelBreakdown({ breakdown, consensus, team1, team2, ben
         {entries.map((m, idx) => {
           const t1Pct = m.prob * 100;
           const t2Pct = (1 - m.prob) * 100;
-          const icon = MODEL_ICONS[m.name] || '🤖';
           const predicted = t1Pct >= 50 ? team1 : team2;
 
           return (
             <div key={m.name} className="model-row anim-fade-up" style={{ animationDelay: `${idx * 0.05}s` }}>
               <div className="model-row-left">
-                <span className="model-icon">{icon}</span>
+                <span className="model-bullet" aria-hidden="true" />
                 <div>
                   <div className="model-name">{m.name}</div>
                   {m.accuracy && (
-                    <div className="model-accuracy">Acc: {(m.accuracy * 100).toFixed(1)}%</div>
+                    <div className="model-accuracy">Test Acc: {(m.accuracy * 100).toFixed(1)}%</div>
                   )}
                 </div>
               </div>

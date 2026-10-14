@@ -12,7 +12,7 @@ export default class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('IPL Oracle Uncaught Component Error:', error, errorInfo);
+    console.error('IPL Info Uncaught Component Error:', error, errorInfo);
     this.setState({ errorInfo });
   }
 
@@ -46,7 +46,7 @@ export default class ErrorBoundary extends React.Component {
           }}>
             <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🏏</div>
             <h2 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '8px', color: '#0f172a' }}>
-              Something went wrong loading IPL Oracle
+              Something went wrong loading IPL Info
             </h2>
             <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '20px' }}>
               An unexpected render error occurred. The application intercepted this error to prevent a black screen.

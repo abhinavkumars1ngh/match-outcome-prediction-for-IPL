@@ -19,6 +19,13 @@ import PlayersPage from './pages/PlayersPage';
 import BatterBowlerPage from './pages/BatterBowlerPage';
 import My11Page from './pages/My11Page';
 
+import {
+  IconTarget,
+  IconBrain,
+  IconSwords,
+  IconBarChart,
+} from './components/Icons';
+
 import './App.css';
 
 function SectionCard({ id, icon, title, subtitle, iconBg, children, className = '' }) {
@@ -194,6 +201,7 @@ export default function App() {
             setActivePage={setActivePage}
             totalMatches={totalMatches}
             onQuickSelect={handleQuickSelect}
+            benchmarks={benchmarks}
           />
         )}
 
@@ -246,7 +254,7 @@ export default function App() {
 
             <SectionCard
               id="predict"
-              icon="🔮"
+              icon={<IconTarget size={18} />}
               title="Match Prediction Setup"
               subtitle="Configure team matchup, venue, and toss scenario"
             >
@@ -282,7 +290,7 @@ export default function App() {
 
                     {/* Venue */}
                     <div className="config-field">
-                      <label className="form-label">🏟️ Venue</label>
+                      <label className="form-label">Stadium Venue</label>
                       <div className="select-wrapper">
                         <select
                           id="venue-select"
@@ -306,7 +314,7 @@ export default function App() {
 
                     {/* Toss Winner */}
                     <div className="config-field">
-                      <label className="form-label">🪙 Toss Winner</label>
+                      <label className="form-label">Toss Winner</label>
                       <div className="toggle-group">
                         <button
                           className={`toggle-btn ${tossWinner === (team1?.name || '') ? 'active' : ''}`}
@@ -327,7 +335,7 @@ export default function App() {
 
                     {/* Toss Decision */}
                     <div className="config-field">
-                      <label className="form-label">🏏 Toss Decision</label>
+                      <label className="form-label">Toss Decision</label>
                       <div className="toggle-group">
                         <button
                           className={`toggle-btn ${tossDecision === 'bat' ? 'active' : ''}`}
@@ -346,7 +354,7 @@ export default function App() {
 
                     {/* Match Stage */}
                     <div className="config-field">
-                      <label className="form-label">🏆 Tournament Stage</label>
+                      <label className="form-label">Tournament Stage</label>
                       <div className="toggle-group">
                         <button
                           className={`toggle-btn ${!isPlayoff ? 'active' : ''}`}
@@ -379,7 +387,7 @@ export default function App() {
                       {predicting ? (
                         <><div className="spinner" />Computing Models…</>
                       ) : (
-                        <><span>🔮</span> Predict Match Outcome</>
+                        <><IconTarget size={16} /> Predict Match Outcome</>
                       )}
                     </button>
                   </div>
@@ -410,7 +418,7 @@ export default function App() {
             {prediction && (
               <div id="result" className="results-grid">
                 <SectionCard
-                  icon="🎯"
+                  icon={<IconTarget size={18} />}
                   title="Predicted Match Outcome"
                   subtitle={`Ensemble: ${prediction.result.model_used}`}
                 >
@@ -429,21 +437,21 @@ export default function App() {
                   <div className="match-summary">
                     <div className="match-summary-item">
                       <span className="match-summary-label">Venue</span>
-                      <span className="match-summary-val">🏟️ {prediction.match.venue}</span>
+                      <span className="match-summary-val">{prediction.match.venue}</span>
                     </div>
                     <div className="match-summary-item">
                       <span className="match-summary-label">Toss Factor</span>
-                      <span className="match-summary-val">🪙 {prediction.match.toss_winner} chose to {prediction.match.toss_decision}</span>
+                      <span className="match-summary-val">{prediction.match.toss_winner} chose to {prediction.match.toss_decision}</span>
                     </div>
                     <div className="match-summary-item">
                       <span className="match-summary-label">Stage</span>
-                      <span className="match-summary-val">{prediction.match.is_playoff ? '🏆 Playoff / Knockout' : '📅 League Stage'}</span>
+                      <span className="match-summary-val">{prediction.match.is_playoff ? 'Playoff / Knockout' : 'League Stage'}</span>
                     </div>
                   </div>
                 </SectionCard>
 
                 <SectionCard
-                  icon="🤖"
+                  icon={<IconBrain size={18} />}
                   title="Model Consensus Breakdown"
                   subtitle="Individual algorithm estimates for Team 1"
                 >
@@ -461,13 +469,13 @@ export default function App() {
             {/* Head-to-Head Section */}
             <SectionCard
               id="h2h"
-              icon="⚔️"
+              icon={<IconSwords size={18} />}
               title="Head-to-Head Encounter History"
               subtitle={team1 && team2 ? `${team1.name} vs ${team2.name}` : 'Select two teams to examine head-to-head records'}
             >
               {!team1 || !team2 ? (
                 <div className="placeholder-message">
-                  <span className="placeholder-icon">⚔️</span>
+                  <span className="placeholder-icon"><IconSwords size={32} /></span>
                   <p>Choose two franchises above to view historical encounters and recent 5-match form.</p>
                 </div>
               ) : h2hLoading ? (
@@ -489,7 +497,7 @@ export default function App() {
             {prediction && (
               <SectionCard
                 id="insights"
-                icon="🧠"
+                icon={<IconBrain size={18} />}
                 title="Model Explainability (XAI)"
                 subtitle="Dominant statistical drivers behind this forecast"
               >
@@ -507,7 +515,7 @@ export default function App() {
             {/* Model Benchmarks Leaderboard */}
             <SectionCard
               id="models"
-              icon="📊"
+              icon={<IconBarChart size={18} />}
               title="Model Benchmark Leaderboard"
               subtitle="Evaluated on held-out test matches — strict zero target leakage"
             >
@@ -519,14 +527,14 @@ export default function App() {
         {/* Global Footer */}
         <footer className="app-footer">
           <div className="footer-brand">
-            <img src="/ipl_info_logo.png" alt="IPL info" style={{ width: 28, height: 28, borderRadius: 6 }} />
-            <span>IPL info</span>
+            <img src="/ipl_info_logo.png" alt="IPL Info" style={{ width: 128, height: 128, borderRadius: 3 }} />
+            <span>IPL Info</span>
           </div>
           <p className="footer-text">
-            Comprehensive IPL Cricket Analytics & Probabilistic Match Outcome Forecasting (2008–2024).
+            A Comparative Study with multiple Models for Explainable IPL Match Outcome Prediction (2008–2024).
           </p>
           <p className="footer-note">
-            Predictions are statistical estimations derived from historical scorecards. Not intended for commercial betting.
+            Predictions are statistical estimations derived from historical scorecards and 12 benchmarked classification models. Not intended for commercial wagering.
           </p>
         </footer>
       </main>

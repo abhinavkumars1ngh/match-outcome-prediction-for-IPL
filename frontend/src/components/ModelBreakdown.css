@@ -17,9 +17,12 @@
   gap: 8px;
   font-size: 0.85rem;
   font-weight: 800;
-  color: #854d0e;
+  color: #14532d;
 }
-.consensus-icon { font-size: 1rem; }
+.consensus-icon {
+  color: #15803d;
+  flex-shrink: 0;
+}
 .consensus-values {
   display: flex;
   align-items: center;
@@ -59,10 +62,16 @@
 .model-row-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex: 0 0 170px;
 }
-.model-icon { font-size: 1rem; line-height: 1; }
+.model-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #15803d;
+  flex-shrink: 0;
+}
 .model-name {
   font-size: 0.825rem;
   font-weight: 700;

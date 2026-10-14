@@ -18,7 +18,7 @@ if %ERRORLEVEL% NEQ 0 (
 
 REM Start R Plumber API in background
 echo [1/2] Starting R Plumber API on port 8000...
-start "IPL Oracle API" cmd /k "cd /d "%~dp0" && %RSCRIPT% api/start_server.R"
+start "IPL Info API" cmd /k "cd /d "%~dp0" && %RSCRIPT% api/start_server.R"
 
 REM Wait a moment for R to initialize
 timeout /t 5 /nobreak > nul

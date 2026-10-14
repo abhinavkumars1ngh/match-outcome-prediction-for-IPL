@@ -1,32 +1,18 @@
-// ModelLeaderboard.jsx — Full accuracy leaderboard from /api/models
+// ModelLeaderboard.jsx — Enterprise algorithm benchmark leaderboard
 import React from 'react';
 import './ModelLeaderboard.css';
-
-const ICONS = {
-  'Logistic Regression': '📊',
-  'Decision Tree': '🌳',
-  'Random Forest': '🌲',
-  'KNN': '🔵',
-  'Naive Bayes': '📐',
-  'SVM': '⚡',
-  'AdaBoost': '🚀',
-  'Gradient Boosting': '🔥',
-  'MLP': '🧠',
-};
-
-const MEDAL = ['🥇', '🥈', '🥉'];
 
 export default function ModelLeaderboard({ models }) {
   if (!models || models.length === 0) {
     return (
-      <div className="text-muted text-sm" style={{ padding: '20px', textAlign: 'center' }}>
-        Model benchmark data unavailable.
+      <div className="text-muted text-sm" style={{ padding: '24px', textAlign: 'center' }}>
+        Model benchmark data is currently loading or unavailable.
       </div>
     );
   }
 
   // Sort by Accuracy descending
-  const sorted = [...models].sort((a, b) => Number(b.Accuracy) - Number(a.Accuracy));
+  const sorted = [...models].sort((a, b) => Number(b.Accuracy || 0) - Number(a.Accuracy || 0));
 
   const metric = (val) => val != null ? (Number(val) * 100).toFixed(1) + '%' : '—';
   const metricRaw = (val) => val != null ? Number(val).toFixed(4) : '—';
@@ -35,29 +21,29 @@ export default function ModelLeaderboard({ models }) {
     <div className="leaderboard">
       {/* Header */}
       <div className="leaderboard-header">
-        <span className="lb-col-model">Model</span>
+        <span className="lb-col-model">Classification Model</span>
         <span className="lb-col-metric">Accuracy</span>
-        <span className="lb-col-metric">F1</span>
-        <span className="lb-col-metric">AUC-ROC</span>
-        <span className="lb-col-bar">Performance</span>
+        <span className="lb-col-metric">F1 Score</span>
+        <span className="lb-col-metric">ROC-AUC</span>
+        <span className="lb-col-bar">Test Accuracy Ratio</span>
       </div>
 
       {/* Rows */}
       {sorted.map((m, idx) => {
         const acc = Number(m.Accuracy || 0);
-        const icon = ICONS[m.Model] || '🤖';
-        const medal = MEDAL[idx] || '';
+        const isTop = idx < 3;
 
         return (
           <div
             key={m.Model}
-            className={`lb-row anim-fade-up ${idx === 0 ? 'top' : ''}`}
-            style={{ animationDelay: `${idx * 0.04}s` }}
+            className={`lb-row ${isTop ? 'top' : ''}`}
           >
             <div className="lb-col-model">
-              <span className="lb-rank">{medal || `#${idx + 1}`}</span>
-              <span className="lb-icon">{icon}</span>
+              <span className={`lb-rank-badge ${isTop ? 'top-rank' : ''}`}>
+                #{idx + 1}
+              </span>
               <span className="lb-name">{m.Model}</span>
+              {idx === 0 && <span className="top-model-pill">Best Performer</span>}
             </div>
             <span className="lb-col-metric lb-acc">{metric(m.Accuracy)}</span>
             <span className="lb-col-metric">{metricRaw(m.F1)}</span>
@@ -68,9 +54,7 @@ export default function ModelLeaderboard({ models }) {
                   className="lb-bar-fill"
                   style={{
                     width: `${Math.min(acc * 100, 100)}%`,
-                    background: idx === 0
-                      ? 'linear-gradient(90deg, var(--violet-500), var(--electric))'
-                      : 'linear-gradient(90deg, var(--blue-500), var(--blue-400))',
+                    backgroundColor: isTop ? '#15803d' : '#16a34a',
                   }}
                 />
               </div>
@@ -81,7 +65,7 @@ export default function ModelLeaderboard({ models }) {
 
       <div className="leaderboard-footer">
         <span className="text-xs text-muted">
-          Evaluated on held-out test set · Zero target leakage · Pre-match features only
+          Evaluated on held-out test matches (2022–2024) · Strict zero target leakage · Pre-match features only
         </span>
       </div>
     </div>

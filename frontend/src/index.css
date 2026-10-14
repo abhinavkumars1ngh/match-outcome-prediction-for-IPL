@@ -31,6 +31,12 @@
   --yellow-accent: #ffcb05;
   --red-accent:    #ef4444;
 
+  /* Theme Compatibility Aliases */
+  --cb-green:      var(--green-700);
+  --cb-border:     var(--border);
+  --cb-text-muted: var(--text-muted);
+  --cb-text-secondary: #4b5563;
+
   /* Typography */
   --font-display: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
