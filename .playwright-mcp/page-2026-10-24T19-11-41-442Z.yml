@@ -1,0 +1,354 @@
+- generic [ref=f2e3]:
+  - banner [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - button "Go to Homepage" [ref=f2e6] [cursor=pointer]:
+        - img "IPL Info Logo" [ref=f2e8]
+        - generic [ref=f2e9]:
+          - generic [ref=f2e10]:
+            - generic [ref=f2e11]: IPL Info
+            - generic [ref=f2e12]: PRO
+          - generic [ref=f2e13]: IPL Statistics Platform
+      - navigation "Main Navigation" [ref=f2e14]:
+        - button "Home" [ref=f2e15] [cursor=pointer]
+        - button "Franchises" [ref=f2e21] [cursor=pointer]
+        - button "Tournament Stats" [ref=f2e26] [cursor=pointer]
+        - button "Probability & Distributions" [ref=f2e30] [cursor=pointer]
+        - button "Players" [ref=f2e36] [cursor=pointer]
+        - button "MY11 Simulation" [ref=f2e42] [cursor=pointer]
+        - button "Matchups (H2H)" [ref=f2e51] [cursor=pointer]
+        - button "Predictions" [ref=f2e61] [cursor=pointer]
+      - generic "Verifying backend connection..." [ref=f2e69]: Connecting…
+  - main [ref=f2e72]:
+    - generic [ref=f2e73]:
+      - region "Cricket intelligence, in five chapters" [ref=f2e74]:
+        - generic [ref=f2e75]:
+          - generic [ref=f2e76]:
+            - generic [ref=f2e77]: IPL INFO / INTELLIGENCE IN PLAY
+            - link "Skip to platform" [ref=f2e79] [cursor=pointer]:
+              - /url: "#home-stats-overview"
+              - text: Skip to platform ↗
+          - article [ref=f2e81]:
+            - paragraph [ref=f2e82]: 01 / A new perspective on the game
+            - heading [level=1] [ref=f2e83]:
+              - text: Predict the Game.
+              - emphasis [ref=f2e84]: Understand the Numbers.
+            - paragraph [ref=f2e85]: Machine learning meets cricket intelligence. Explore IPL match predictions, statistical patterns, and explainable AI through one unified analytics platform.
+            - generic [ref=f2e86]:
+              - button "Explore Predictions" [ref=f2e87] [cursor=pointer]:
+                - text: Explore Predictions
+                - generic [aria-hidden] [ref=f2e88]: ↗
+              - button "Discover Model Intelligence" [ref=f2e89] [cursor=pointer]:
+                - text: Discover Model Intelligence
+                - generic [aria-hidden] [ref=f2e90]: →
+            - generic [ref=f2e91]:
+              - generic [ref=f2e92]: HISTORICAL DEPTH.
+              - generic [ref=f2e93]: EXPLAINABLE INTELLIGENCE.
+          - generic [ref=f2e94]:
+            - generic [ref=f2e95]:
+              - text: SCROLL TO EXPLORE
+              - generic [ref=f2e96]: The game moves with you.
+            - navigation "Story chapters" [ref=f2e97]:
+              - 'button "Chapter 1: The game" [ref=f2e98] [cursor=pointer]':
+                - generic [ref=f2e99]: "01"
+                - generic [ref=f2e100]: The game
+              - 'button "Chapter 2: The signals" [ref=f2e101] [cursor=pointer]':
+                - generic [ref=f2e102]: "02"
+                - generic [ref=f2e103]: The signals
+              - 'button "Chapter 3: The insight" [ref=f2e104] [cursor=pointer]':
+                - generic [ref=f2e105]: "03"
+                - generic [ref=f2e106]: The insight
+              - 'button "Chapter 4: The models" [ref=f2e107] [cursor=pointer]':
+                - generic [ref=f2e108]: "04"
+                - generic [ref=f2e109]: The models
+              - 'button "Chapter 5: Your next move" [ref=f2e110] [cursor=pointer]':
+                - generic [ref=f2e111]: "05"
+                - generic [ref=f2e112]: Your next move
+            - generic [ref=f2e113]: CRICKET × MACHINE LEARNING
+      - generic [ref=f2e115]:
+        - generic [ref=f2e116]:
+          - generic [ref=f2e117]:
+            - generic [ref=f2e118]: "0"
+            - generic [ref=f2e119]: Benchmarked
+          - generic [ref=f2e120]: ML Algorithms
+          - generic [ref=f2e121]: Classifiers Evaluated
+        - generic [ref=f2e122]:
+          - generic [ref=f2e123]:
+            - generic [ref=f2e124]: "0"
+            - generic [ref=f2e125]: 2008–2024
+          - generic [ref=f2e126]: Matches Analyzed
+          - generic [ref=f2e127]: 17 Full IPL Seasons
+        - generic [ref=f2e128]:
+          - generic [ref=f2e129]:
+            - generic [ref=f2e130]: "0"
+            - generic [ref=f2e131]: Zero Leakage
+          - generic [ref=f2e132]: Pre-Match Features
+          - generic [ref=f2e133]: Rolling Historical Windows
+        - generic [ref=f2e134]:
+          - generic [ref=f2e135]:
+            - generic [ref=f2e136]: 0K+
+            - generic [ref=f2e138]: Ball-by-Ball
+          - generic [ref=f2e139]: Deliveries Tracked
+          - generic [ref=f2e140]: Relational SQLite Schema
+        - generic [ref=f2e141]:
+          - generic [ref=f2e142]:
+            - generic [ref=f2e143]: "0"
+            - generic [ref=f2e144]: Continuity
+          - generic [ref=f2e145]: Franchises
+          - generic [ref=f2e146]: Active & Historic Teams
+      - generic [ref=f2e147]:
+        - region "Featured Historical Matchups" [ref=f2e148]:
+          - generic [ref=f2e149]:
+            - generic [ref=f2e150]:
+              - generic [ref=f2e151]: Interactive Fixture Archive
+              - heading "Historical Head-to-Head Rivalries" [level=2] [ref=f2e152]
+            - generic [ref=f2e153]: Click any fixture to instantly load pre-match parameters into the prediction engine
+          - generic [ref=f2e154]:
+            - generic [ref=f2e155]: HISTORICAL H2H ARCHIVE
+            - generic [ref=f2e158]:
+              - button "MI vs CSK El Clásico MI 20 - 17 CSK" [ref=f2e159] [cursor=pointer]:
+                - generic [ref=f2e160]:
+                  - generic [ref=f2e161]: MI
+                  - generic [ref=f2e162]: vs
+                  - generic [ref=f2e163]: CSK
+                - generic [ref=f2e164]:
+                  - generic [ref=f2e165]: El Clásico
+                  - generic [ref=f2e166]: MI 20 - 17 CSK
+              - button "RCB vs KKR Rivalry Derby KKR 19 - 14 RCB" [ref=f2e167] [cursor=pointer]:
+                - generic [ref=f2e168]:
+                  - generic [ref=f2e169]: RCB
+                  - generic [ref=f2e170]: vs
+                  - generic [ref=f2e171]: KKR
+                - generic [ref=f2e172]:
+                  - generic [ref=f2e173]: Rivalry Derby
+                  - generic [ref=f2e174]: KKR 19 - 14 RCB
+              - button "GT vs RR Title Rematch GT 4 - 1 RR" [ref=f2e175] [cursor=pointer]:
+                - generic [ref=f2e176]:
+                  - generic [ref=f2e177]: GT
+                  - generic [ref=f2e178]: vs
+                  - generic [ref=f2e179]: RR
+                - generic [ref=f2e180]:
+                  - generic [ref=f2e181]: Title Rematch
+                  - generic [ref=f2e182]: GT 4 - 1 RR
+              - button "SRH vs DC South vs North SRH 12 - 11 DC" [ref=f2e183] [cursor=pointer]:
+                - generic [ref=f2e184]:
+                  - generic [ref=f2e185]: SRH
+                  - generic [ref=f2e186]: vs
+                  - generic [ref=f2e187]: DC
+                - generic [ref=f2e188]:
+                  - generic [ref=f2e189]: South vs North
+                  - generic [ref=f2e190]: SRH 12 - 11 DC
+              - button "CSK vs RCB Southern Derby CSK 21 - 10 RCB" [ref=f2e191] [cursor=pointer]:
+                - generic [ref=f2e192]:
+                  - generic [ref=f2e193]: CSK
+                  - generic [ref=f2e194]: vs
+                  - generic [ref=f2e195]: RCB
+                - generic [ref=f2e196]:
+                  - generic [ref=f2e197]: Southern Derby
+                  - generic [ref=f2e198]: CSK 21 - 10 RCB
+        - region [ref=f2e199]:
+          - generic [ref=f2e206]:
+            - heading "Research Scope & Technical Architecture" [level=2] [ref=f2e207]
+            - paragraph [ref=f2e208]: Standardized data pipeline engineered to eliminate lookahead bias and quantify probabilistic predictability
+          - generic [ref=f2e209]:
+            - generic [ref=f2e210]:
+              - heading "Comparative Model Evaluation" [level=3] [ref=f2e217]
+              - paragraph [ref=f2e218]: 12 distinct classification architectures benchmarked under identical out-of-sample test conditions (2022–2024 holdout seasons).
+            - generic [ref=f2e219]:
+              - heading "Zero Target Leakage Feature Engineering" [level=3] [ref=f2e223]
+              - paragraph [ref=f2e224]: 15 pre-match features calculated strictly via chronological rolling windows, preventing lookahead bias in model evaluation.
+            - generic [ref=f2e225]:
+              - heading "Explainable AI & Feature Attribution" [level=3] [ref=f2e231]
+              - paragraph [ref=f2e232]: Permutation importance drops and Gini importance metrics reveal key drivers including venue averages and historical win differences.
+            - generic [ref=f2e233]:
+              - heading "Relational SQLite Architecture" [level=3] [ref=f2e240]
+              - paragraph [ref=f2e241]: High-performance SQL schema storing 1,095 matches and 260,920 delivery records for deterministic, reproducible queries.
+          - paragraph [ref=f2e246]:
+            - strong [ref=f2e247]: "Empirical Predictability Note:"
+            - text: Because T20 cricket is inherently stochastic with high outcome variance, pre-match machine learning models operate near an empirical accuracy boundary of
+            - strong [ref=f2e248]: 50%–54%
+            - text: . Rather than overstating deterministic accuracy, this platform provides calibrated probability distributions and transparent feature attribution.
+        - region [ref=f2e249]:
+          - generic [ref=f2e250]:
+            - generic [ref=f2e251]:
+              - generic [ref=f2e252]: Out-of-Sample Evaluation
+              - heading "Algorithm Performance Benchmark" [level=2] [ref=f2e255]
+              - paragraph [ref=f2e256]: Comparative metrics across all 12 evaluated models on chronological holdout test fixtures (2022–2024)
+            - generic [ref=f2e257]:
+              - tablist [ref=f2e258]:
+                - tab "All 12 Models" [selected] [ref=f2e259] [cursor=pointer]
+                - tab "Top 6" [ref=f2e260] [cursor=pointer]
+              - button "Full Leaderboard & XAI" [ref=f2e261] [cursor=pointer]
+          - table "Machine Learning Model Comparison" [ref=f2e266]:
+            - rowgroup [ref=f2e267]:
+              - row [ref=f2e268]:
+                - columnheader "Rank" [ref=f2e269]
+                - columnheader "Model Algorithm" [ref=f2e270]
+                - columnheader "Accuracy" [ref=f2e271]
+                - columnheader "ROC-AUC" [ref=f2e272]
+                - columnheader "F1 Score" [ref=f2e273]
+                - columnheader "Precision" [ref=f2e274]
+                - columnheader "Recall" [ref=f2e275]
+                - columnheader "Performance Ratio" [ref=f2e276]
+            - rowgroup [ref=f2e277]:
+              - row [ref=f2e278]:
+                - cell "#1" [ref=f2e279]
+                - cell "Decision TreeTop Tier" [ref=f2e281]
+                - cell "53.2%" [ref=f2e282]
+                - cell "0.5399" [ref=f2e283]
+                - cell "0.5405" [ref=f2e284]
+                - cell "0.5455" [ref=f2e285]
+                - cell "0.5357" [ref=f2e286]
+                - cell [ref=f2e287]
+              - row [ref=f2e290]:
+                - cell "#2" [ref=f2e291]
+                - cell "KNNTop Tier" [ref=f2e293]
+                - cell "52.8%" [ref=f2e294]
+                - cell "0.5218" [ref=f2e295]
+                - cell "0.4432" [ref=f2e296]
+                - cell "0.5616" [ref=f2e297]
+                - cell "0.3661" [ref=f2e298]
+                - cell [ref=f2e299]
+              - row [ref=f2e302]:
+                - cell "#3" [ref=f2e303]
+                - cell "Gradient BoostingTop Tier" [ref=f2e305]
+                - cell "51.4%" [ref=f2e306]
+                - cell "0.5150" [ref=f2e307]
+                - cell "0.4045" [ref=f2e308]
+                - cell "0.5455" [ref=f2e309]
+                - cell "0.3214" [ref=f2e310]
+                - cell [ref=f2e311]
+              - row [ref=f2e314]:
+                - cell "#4" [ref=f2e315]
+                - cell "AdaBoost" [ref=f2e317]
+                - cell "50.9%" [ref=f2e318]
+                - cell "0.5194" [ref=f2e319]
+                - cell "0.3743" [ref=f2e320]
+                - cell "0.5424" [ref=f2e321]
+                - cell "0.2857" [ref=f2e322]
+                - cell [ref=f2e323]
+              - row [ref=f2e326]:
+                - cell "#5" [ref=f2e327]
+                - cell "SVM" [ref=f2e329]
+                - cell "49.5%" [ref=f2e330]
+                - cell "0.5248" [ref=f2e331]
+                - cell "0.3820" [ref=f2e332]
+                - cell "0.5152" [ref=f2e333]
+                - cell "0.3036" [ref=f2e334]
+                - cell [ref=f2e335]
+              - row [ref=f2e338]:
+                - cell "#6" [ref=f2e339]
+                - cell "Naive Bayes" [ref=f2e341]
+                - cell "49.1%" [ref=f2e342]
+                - cell "0.4959" [ref=f2e343]
+                - cell "0.4422" [ref=f2e344]
+                - cell "0.5057" [ref=f2e345]
+                - cell "0.3929" [ref=f2e346]
+                - cell [ref=f2e347]
+              - row [ref=f2e350]:
+                - cell "#7" [ref=f2e351]
+                - cell "Logistic Regression" [ref=f2e353]
+                - cell "48.6%" [ref=f2e354]
+                - cell "0.5216" [ref=f2e355]
+                - cell "0.4105" [ref=f2e356]
+                - cell "0.5000" [ref=f2e357]
+                - cell "0.3482" [ref=f2e358]
+                - cell [ref=f2e359]
+              - row [ref=f2e362]:
+                - cell "#8" [ref=f2e363]
+                - cell "MLP (Neural Net)" [ref=f2e365]
+                - cell "48.2%" [ref=f2e366]
+                - cell "0.5164" [ref=f2e367]
+                - cell "0.4145" [ref=f2e368]
+                - cell "0.4938" [ref=f2e369]
+                - cell "0.3571" [ref=f2e370]
+                - cell [ref=f2e371]
+              - row [ref=f2e374]:
+                - cell "#9" [ref=f2e375]
+                - cell "Bagging" [ref=f2e377]
+                - cell "47.3%" [ref=f2e378]
+                - cell "0.5366" [ref=f2e379]
+                - cell "0.4390" [ref=f2e380]
+                - cell "0.4839" [ref=f2e381]
+                - cell "0.4018" [ref=f2e382]
+                - cell [ref=f2e383]
+              - row [ref=f2e386]:
+                - cell "#10" [ref=f2e387]
+                - cell "SGD Classifier" [ref=f2e389]
+                - cell "47.3%" [ref=f2e390]
+                - cell "0.4993" [ref=f2e391]
+                - cell "0.4444" [ref=f2e392]
+                - cell "0.4842" [ref=f2e393]
+                - cell "0.4107" [ref=f2e394]
+                - cell [ref=f2e395]
+              - row [ref=f2e398]:
+                - cell "#11" [ref=f2e399]
+                - cell "Extra Trees" [ref=f2e401]
+                - cell "47.3%" [ref=f2e402]
+                - cell "0.5334" [ref=f2e403]
+                - cell "0.3030" [ref=f2e404]
+                - cell "0.4717" [ref=f2e405]
+                - cell "0.2232" [ref=f2e406]
+                - cell [ref=f2e407]
+              - row [ref=f2e410]:
+                - cell "#12" [ref=f2e411]
+                - cell "Random Forest" [ref=f2e413]
+                - cell "41.3%" [ref=f2e414]
+                - cell "0.5951" [ref=f2e415]
+                - cell "0.3118" [ref=f2e416]
+                - cell "0.3919" [ref=f2e417]
+                - cell "0.2589" [ref=f2e418]
+                - cell [ref=f2e419]
+          - generic [ref=f2e422]:
+            - generic [ref=f2e423]: Evaluated using out-of-sample historical holdout set (2022–2024 seasons). Pre-match features only. No in-play ball updates.
+            - button "Configure Custom Predictions with Selected Algorithms →" [ref=f2e424] [cursor=pointer]
+        - region [ref=f2e425]:
+          - generic [ref=f2e426]:
+            - generic [ref=f2e427]:
+              - generic [ref=f2e428]: Analytics Architecture
+              - heading "Platform Analytical Modules" [level=2] [ref=f2e429]
+            - paragraph [ref=f2e430]: Integrated research toolsets for franchise history, player records, empirical distributions, and scenario modeling
+          - generic [ref=f2e431]:
+            - button "Core Engine Match Outcome Prediction Engine Ensemble model consensus predicting win probabilities with zero target leakage, real-time feature derivation, and explainable statistical drivers. Predict Match Outcome" [ref=f2e432] [cursor=pointer]:
+              - generic [ref=f2e433]: Core Engine
+              - heading "Match Outcome Prediction Engine" [level=3] [ref=f2e440]
+              - paragraph [ref=f2e441]: Ensemble model consensus predicting win probabilities with zero target leakage, real-time feature derivation, and explainable statistical drivers.
+              - generic [ref=f2e442]: Predict Match Outcome
+            - button "Empirical Bayes Empirical Probability & Distributions First-innings score variance, 95% Wilson confidence intervals, defending vs chasing biases, and franchise-by-venue cross-tabulation matrices. Explore Probability Space" [ref=f2e446] [cursor=pointer]:
+              - generic [ref=f2e447]: Empirical Bayes
+              - heading "Empirical Probability & Distributions" [level=3] [ref=f2e453]
+              - paragraph [ref=f2e454]: First-innings score variance, 95% Wilson confidence intervals, defending vs chasing biases, and franchise-by-venue cross-tabulation matrices.
+              - generic [ref=f2e455]: Explore Probability Space
+            - button "Ball-by-Ball Batsman vs Bowler Matchups (H2H) Granular ball-by-ball head-to-head records across 17 IPL seasons. Strike rates, dot balls, dismissals, and match-phase splits. Analyze Head-to-Head" [ref=f2e459] [cursor=pointer]:
+              - generic [ref=f2e460]: Ball-by-Ball
+              - heading "Batsman vs Bowler Matchups (H2H)" [level=3] [ref=f2e470]
+              - paragraph [ref=f2e471]: Granular ball-by-ball head-to-head records across 17 IPL seasons. Strike rates, dot balls, dismissals, and match-phase splits.
+              - generic [ref=f2e472]: Analyze Head-to-Head
+            - button "14 Teams Franchise Performance Archive Historical win percentages, championship records, defending vs chasing splits, and venue-specific win rates across all 14 franchises. Explore Franchises" [ref=f2e476] [cursor=pointer]:
+              - generic [ref=f2e477]: 14 Teams
+              - heading "Franchise Performance Archive" [level=3] [ref=f2e482]
+              - paragraph [ref=f2e483]: Historical win percentages, championship records, defending vs chasing splits, and venue-specific win rates across all 14 franchises.
+              - generic [ref=f2e484]: Explore Franchises
+            - button "Career Cards Player Profiles & Scorecards Complete career batting and bowling performance cards for over 650+ cricketers derived directly from official delivery records. Search 650+ Players" [ref=f2e488] [cursor=pointer]:
+              - generic [ref=f2e489]: Career Cards
+              - heading "Player Profiles & Scorecards" [level=3] [ref=f2e495]
+              - paragraph [ref=f2e496]: Complete career batting and bowling performance cards for over 650+ cricketers derived directly from official delivery records.
+              - generic [ref=f2e497]: Search 650+ Players
+            - button "All-Time Records Tournament Leaderboards Comprehensive historical aggregates for top run-scorers, wicket-takers, boundary percentages, and season-by-season summaries. View Leaderboards" [ref=f2e501] [cursor=pointer]:
+              - generic [ref=f2e502]: All-Time Records
+              - heading "Tournament Leaderboards" [level=3] [ref=f2e506]
+              - paragraph [ref=f2e507]: Comprehensive historical aggregates for top run-scorers, wicket-takers, boundary percentages, and season-by-season summaries.
+              - generic [ref=f2e508]: View Leaderboards
+        - region "Start Predicting Match Outcomes" [ref=f2e512]:
+          - generic [ref=f2e513]:
+            - generic [ref=f2e514]: LIVE INTERACTIVE INFERENCE
+            - heading "Ready to Predict Match Outcomes?" [level=2] [ref=f2e517]
+            - paragraph [ref=f2e518]: Select two franchises, match venue, and toss scenario to execute real-time multi-model consensus win probability estimation with explainable feature attribution.
+            - generic [ref=f2e519]:
+              - button "Launch Prediction Engine" [ref=f2e520] [cursor=pointer]
+              - button "Explore Empirical Distributions" [ref=f2e526] [cursor=pointer]
+    - generic [ref=f2e531]:
+      - generic [ref=f2e532]:
+        - img "IPL Info" [ref=f2e533]
+        - generic [ref=f2e534]: IPL Info
+      - paragraph [ref=f2e535]: A Comparative Study with multiple Models for Explainable IPL Match Outcome Prediction (2008–2024).
+      - paragraph [ref=f2e536]: Predictions are statistical estimations derived from historical scorecards and 12 benchmarked classification models. Not intended for commercial wagering.

@@ -155,3 +155,62 @@ export const IconCalendar = (props) => (
     <line x1="3" y1="10" x2="21" y2="10" />
   </BaseIcon>
 );
+
+export const IconMenu = (props) => (
+  <BaseIcon {...props}>
+    <line x1="3" y1="12" x2="21" y2="12" />
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <line x1="3" y1="18" x2="21" y2="18" />
+  </BaseIcon>
+);
+
+export const IconX = (props) => (
+  <BaseIcon {...props}>
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </BaseIcon>
+);
+
+export const IconVolume2 = (props) => (
+  <BaseIcon {...props}>
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+  </BaseIcon>
+);
+
+export const IconVolumeX = (props) => (
+  <BaseIcon {...props}>
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+    <line x1="23" y1="9" x2="17" y2="15" />
+    <line x1="17" y1="9" x2="23" y2="15" />
+  </BaseIcon>
+);
+
+export const IconPlay = (props) => (
+  <BaseIcon {...props}>
+    <polygon points="5 3 19 12 5 21 5 3" />
+  </BaseIcon>
+);
+
+export const IconPause = (props) => (
+  <BaseIcon {...props}>
+    <rect x="6" y="4" width="4" height="16" />
+    <rect x="14" y="4" width="4" height="16" />
+  </BaseIcon>
+);
+
+export const IconChevronDown = (props) => (
+  <BaseIcon {...props}>
+    <polyline points="6 9 12 15 18 9" />
+  </BaseIcon>
+);
+
+export const IconSparkles = (props) => (
+  <BaseIcon {...props}>
+    <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z" />
+    <path d="M5 3v4" />
+    <path d="M19 17v4" />
+    <path d="M3 5h4" />
+    <path d="M17 19h4" />
+  </BaseIcon>
+);

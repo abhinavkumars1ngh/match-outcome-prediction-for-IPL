@@ -17,6 +17,12 @@
   --green-100: #dcfce7;
   --green-50:  #f0fdf4;
 
+  /* Primary Theme Tokens */
+  --primary:         #15803d;
+  --primary-dark:    #166534;
+  --primary-light:   #22c55e;
+  --primary-surface: #f0fdf4;
+
   --bg-main:   #f7faf7;
   --card-bg:   #ffffff;
   --card-hover:#fafdfa;
@@ -107,6 +113,12 @@ a:hover {
   max-width: 1280px;
   margin: 0 auto;
   padding: 20px 24px 64px;
+}
+
+.app-wrapper--home {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 64px 0;
 }
 
 /* Standard White Card */

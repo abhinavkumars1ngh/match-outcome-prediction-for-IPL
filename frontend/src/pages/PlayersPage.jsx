@@ -145,9 +145,13 @@ export default function PlayersPage() {
                   <h2>{profileData.player.name}</h2>
                   <div className="profile-teams">
                     <strong>Teams Represented:</strong>{' '}
-                    {profileData.player.teams?.length > 0
-                      ? profileData.player.teams.join(', ')
-                      : 'IPL Historical Squads'}
+                    {(() => {
+                      const teams = profileData.player.teams;
+                      if (!teams) return 'IPL Historical Squads';
+                      if (Array.isArray(teams)) return teams.length > 0 ? teams.join(', ') : 'IPL Historical Squads';
+                      if (typeof teams === 'string') return teams;
+                      return 'IPL Historical Squads';
+                    })()}
                   </div>
                   {profileData.player.player_of_match_awards > 0 && (
                     <div className="potm-badge">

@@ -1,5 +1,5 @@
 // App.jsx — IPL Info Multi-Page Cricket Analytics Engine
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, lazy, Suspense } from 'react';
 import { api } from './api';
 import Navbar from './components/Navbar';
 import MatchStrip from './components/MatchStrip';
@@ -12,12 +12,12 @@ import ModelLeaderboard from './components/ModelLeaderboard';
 
 // Import New Pages
 import HomePage from './pages/HomePage';
-import TeamsPage from './pages/TeamsPage';
-import StatsPage from './pages/StatsPage';
-import ProbabilityStatsPage from './pages/ProbabilityStatsPage';
-import PlayersPage from './pages/PlayersPage';
-import BatterBowlerPage from './pages/BatterBowlerPage';
-import My11Page from './pages/My11Page';
+const TeamsPage = lazy(() => import('./pages/TeamsPage'));
+const StatsPage = lazy(() => import('./pages/StatsPage'));
+const ProbabilityStatsPage = lazy(() => import('./pages/ProbabilityStatsPage'));
+const PlayersPage = lazy(() => import('./pages/PlayersPage'));
+const BatterBowlerPage = lazy(() => import('./pages/BatterBowlerPage'));
+const My11Page = lazy(() => import('./pages/My11Page'));
 
 import {
   IconTarget,
@@ -184,10 +184,11 @@ export default function App() {
         apiOnline={apiOnline}
       />
 
-      <main className="app-wrapper">
+      <main className={`app-wrapper ${activePage === 'home' ? 'app-wrapper--home' : ''}`}>
+        <Suspense fallback={<div className="loading-meta" role="status">Loading analytics…</div>}>
         {/* Offline notification if API is disconnected */}
         {apiOnline === false && (
-          <div className="error-box" style={{ marginBottom: 20 }}>
+          <div className="error-box" style={{ marginBottom: 20, maxWidth: activePage === 'home' ? '1280px' : undefined, margin: activePage === 'home' ? '16px auto 0' : undefined }}>
             <span>⚠️</span>
             <div>
               <strong>API Disconnected:</strong> {metaError}
@@ -537,6 +538,7 @@ export default function App() {
             Predictions are statistical estimations derived from historical scorecards and 12 benchmarked classification models. Not intended for commercial wagering.
           </p>
         </footer>
+        </Suspense>
       </main>
     </div>
   );

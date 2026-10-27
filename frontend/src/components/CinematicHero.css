@@ -1,0 +1,66 @@
+/* Normal-flow homepage content beside an independent, unaltered video layer. */
+.cinematic-hero {
+  display:grid;
+  grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items:center;
+  gap:clamp(24px, 4vw, 64px);
+  width:100%;
+  padding:clamp(32px, 5vw, 72px) 4.5%;
+  background:#081711;
+  color:#f3f4ec;
+}
+.cinematic-hero-content { min-width:0; }
+.cinematic-hero h1 {
+  color:#f3f4ec;
+  font-family:var(--font-body);
+  font-size:clamp(34px, 3.5vw, 62px);
+  font-weight:500;
+  line-height:1.1;
+  letter-spacing:-.045em;
+  margin:0 0 24px;
+}
+.cinematic-hero h1 em { color:#a2cdb0; font-style:normal; }
+.cinematic-hero-description { max-width:490px; color:#c4cec5; font-size:14px; line-height:1.85; }
+.cinematic-hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.cinematic-hero-actions button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 17px;
+  border:1px solid #c2dfcb;
+  background:#c2dfcb;
+  color:#11291c;
+  font:600 12px var(--font-body);
+  border-radius:5px;
+  cursor:pointer;
+  transition:background 150ms ease;
+}
+.cinematic-hero-actions button:hover { background:#e0efe4; }
+.cinematic-hero-actions .cinematic-hero-secondary { background:transparent; border-color:#627b6b; color:#e3e9e2; }
+.cinematic-hero-actions .cinematic-hero-secondary:hover { background:#ffffff12; }
+.cinematic-hero button:focus-visible { outline:2px solid #e0f2af; outline-offset:5px; }
+.cinematic-hero-media { width:100%; aspect-ratio:16 / 9; min-width:0; background:#081711; }
+.cinematic-hero-media video,.cinematic-hero-media img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.cinematic-hero-playback { margin-top:20px; }
+.cinematic-hero-playback button { padding:4px 0; background:none; border:0; color:#b9cbbf; font:12px var(--font-body); text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+.cinematic-hero-playback p { color:#c4cec5; font-size:12px; line-height:1.6; }
+.cinematic-hero-playback p:not(:empty) { margin-top:8px; }
+@media(max-width:1000px) {
+  .cinematic-hero { grid-template-columns:1fr; gap:28px; padding:36px 5%; }
+  .cinematic-hero h1 { max-width:650px; font-size:clamp(34px, 5vw, 50px); }
+  .cinematic-hero-description { max-width:600px; }
+}
+@media(max-width:480px) {
+  .cinematic-hero-actions { flex-direction:column; }
+  .cinematic-hero-actions button { width:100%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .cinematic-hero button { transition:none; }
+}

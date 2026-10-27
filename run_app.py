@@ -64,7 +64,8 @@ def is_r_plumber_available():
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
-            timeout=5
+            timeout=5,
+            shell=(sys.platform == "win32")
         )
         return res.returncode == 0
     except Exception:
@@ -99,7 +100,8 @@ def main():
     node_modules_dir = FRONTEND_DIR / "node_modules"
     if not node_modules_dir.exists():
         print(f"{YELLOW}[Launcher] 'node_modules' not found. Installing frontend dependencies...{RESET}")
-        install_res = subprocess.run(["npm", "install"], cwd=FRONTEND_DIR)
+        is_windows = sys.platform == "win32"
+        install_res = subprocess.run(["npm", "install"], cwd=FRONTEND_DIR, shell=is_windows)
         if install_res.returncode != 0:
             print(f"{RED}[Error] Failed to install npm dependencies in {FRONTEND_DIR}.{RESET}")
             sys.exit(1)
@@ -116,7 +118,8 @@ def main():
                 cwd=ROOT_DIR,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                text=True
+                text=True,
+                shell=(sys.platform == "win32")
             )
             processes.append(backend_proc)
             print(f"  {GREEN}✓{RESET} R Plumber process started (PID: {backend_proc.pid}) on port 8000.")
@@ -140,7 +143,8 @@ def main():
     try:
         frontend_proc = subprocess.Popen(
             ["npm", "run", "dev"],
-            cwd=FRONTEND_DIR
+            cwd=FRONTEND_DIR,
+            shell=(sys.platform == "win32")
         )
         processes.append(frontend_proc)
         print(f"  {GREEN}✓{RESET} Vite frontend server launching on {BOLD}http://localhost:5173{RESET}")
